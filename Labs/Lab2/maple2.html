@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1, Fall 2019</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+        <link rel="stylesheet" href="default.min.css">
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1, Fall 2019</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+                                        <h2>Lab 2: Limits And Derivatives: Part 2<BR>(<a href = "sage2.html">Click here</a> for the Sage version)<BR>(<a href = "maple1.html">Click here</a> for part 1)</h2>
+                                         
+                                        <h2>By <a href = "http://www.ctralie.com">Christopher J. Tralie</a></h2>
+                                    </header>
+
+
+
+                            <h2><a name = "part4">Problem 4: Usain Bolt's Peak Speed (10 pts)</a></h2>
+
+                            <p>
+                                <a href = "https://en.wikipedia.org/wiki/Usain_Bolt">Usain Bolt</a> currently holds the world record in the 100 meter race.  Below is some data of the times at which Usain Bolt passed each multiple of 10 meters when he set that record in 2009 (courtesy of <a href = "http://www.eclecticon.info/index_htm_files/Kinematics%20of%20Usain%20Bolt.pdf">Dr. Andrew French</a>)
+                            </p>
+
+
+                            <table>
+                                    <tr>
+                                        <td>0 meters</td>
+                                        <td>10 meters</td>
+                                        <td>20 meters</td>
+                                        <td>30 meters</td>
+                                        <td>40 meters</td>
+                                        <td>50 meters</td>
+                                        <td>60 meters</td>
+                                        <td>70 meters</td>
+                                        <td>80 meters</td>
+                                        <td>90 meters</td>
+                                        <td>100 meters</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0 seconds</td>
+                                        <td>1.89 seconds</td>
+                                        <td>2.88 seconds</td>
+                                        <td>3.78 seconds</td>
+                                        <td>4.64 seconds</td>
+                                        <td>5.47 seconds</td>
+                                        <td>6.29 seconds</td>
+                                        <td>7.10 seconds</td>
+                                        <td>7.92 seconds</td>
+                                        <td>8.75 seconds</td>
+                                        <td>9.58 seconds</td>
+                                    </tr>
+                                </table>
+
+                                <p>
+                                    One interesting question one could ask is what is the peak speed Usain bolt reached during his run?  We know that his average speed is <b>100m/9.58 seconds ~= 10.44 meters/second</b> (about 23 miles per hour!).  However, he had to start from a speed of zero and work his way up, so his peak speed is certainly above this.
+                                </p>
+
+                                <p>
+                                    To determine his peak speed, we would need to compute a derivative, which requires a differentiable function, but we only have a table of numbers at different intervals.  This isn't even continuous, let alone differentiable! (See below)
+                                </p>  
+
+                                <img src = "BoltStem.svg">
+                                
+                                <p>
+                                To get around this, we should fit a function to the data we have.  Simply connecting each dot with a line segment (also known as a <a href = "https://en.wikipedia.org/wiki/Piecewise_linear_function">piecewise linear function</a>) won't quite do the trick, though, because the left and right hand derivatives at the recorded times won't necessarily agree, as shown below
+                                </p>
+
+                                <img src = "BoltPiecewiseLinear.svg">
+
+                                <p>
+                                    A better choice is something known as a <a href = "http://mathworld.wolfram.com/CubicSpline.html">cubic spline</a>, which is a piecewise cubic polynomial <i>whose first and second derivatives agree at the endpoints</i>.  This means that we can meaningfully talk about the velocity <i>and</i> the acceleration at all points in the interval from 0 seconds to 9.58 seconds using a cubic spline.  Maple has a built in function to construct cubic splines in the <code>CurveFitting</code> library.  <a href = "https://www.maplesoft.com/support/help/Maple/view.aspx?path=CurveFitting%2FSpline">Click here</a> to see documentation of that function.
+                                </p>
+
+                        <p>
+                            As an example of building a spline, consider the following code
+<pre>
+<code language="python">with(CurveFitting)
+xs := [0, 1, 4, 5, 6]
+ys := [0, 3, 7, -2, 10]
+f(x) := Spline(xs, ys, x)
+</code>
+</pre>
+                        </p>
+
+                        <p>
+                            You can then plot the spline, and also compute and plot the derivatives using the provided functions up top, as shown below.  <b>You should demonstrate in your notebook that you can reproduce these plots</b>
+
+
+                            <table>
+                                <tr>
+                                    <td><code>plot(f(x), x=0..6)</code></td>
+                                    <td><code>plot(diff(f(x), x), x=0..6)</code></td>
+                                    <td><code>plot(diff(f(x), x$2), x=0..6)</code></td>
+                                </tr>
+                                <tr>
+                                    <td><img src = "SplineExample.png"></td>
+                                    <td><img src = "SplineExampleVelocity.png"></td>
+                                    <td>
+                                        <img src = "SplineExampleAcceleration.png">
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+
+                        <p>
+                            To see what the polynomials actually are, you can simply type <code>Spline(xs, ys, x)</code> in a cell by itself and then click run.  You should roughly get the following on the above example (note that each piece comes with a cubic polynomial and the two numbers that determine the interval over which that polynomial is defined):
+
+                        <h3>
+                            \[ \left\{  \begin{array}{c} 0.638x^3 + 2.36x & 0 \leq x < 1 \\ -0.965(x - 1)^3 + 1.92(x - 1)^2 + 4.28x - 1.28 & 1 \leq x < 4 \\ 8.07(x - 4)^3 - 6.77(x - 4)^2 - 10.299x + 48.195 & x \leq 4 < 5 \\ -5.81(x - 5)^3 + 17.443(x - 5)^2 + 0.371x - 3.855 & 5 \leq x < 6\end{array} \right\} \]
+                        </h3>
+</pre>
+                        </p>
+
+                        <p>
+                            Now, you should be prepared to answer the following questions:
+
+                            <h3>Questions</h3>
+                            <ol>
+                                <li>
+                                    Describe the velocity and acceleration plots for Usain Bolt's run over time, using cubic splines to interpolate the data of his splits.  That is, <b>show both the velocity and acceleration plots in your solution, and talk about their overall features</b>.
+                                </li>
+                                <li>
+                                    Do you see anything surprising in the velocity/acceleration plots, given that this was the world record?   Where might a track coach be upset with Usain Bolt (i.e. where is there room for improvement, and why do you think this happened)?
+                                </li>
+                                <li>
+                                    What is the peak velocity that Usain Bolt reached over his run, in meters/second?  Hint: You should narrow this down to one interval by looking at the velocity/acceleration plots.  Then, since the derivative of a cubic is a parabola <b>ax<SUP>2</SUP> + bx + c</b>, you can find the maximum as <b>-b/2a</b> (use Maple to help with evaluating this function as much as possible, rather than doing it by hand).
+                                </li>
+                            </ol>
+                          
+                        </p>
+
+
+                        <h2><a name = "part5">Problem 5: Implicit Differentiation of the Tschirnhausen Cubic (5 pts)</a></h2>
+
+                        <p>
+                            There's a fancy-sounding relation known as the <i>Tschirnhausen Cubic</i>, which makes a shape that looks like a ribbon.  One incarnation is as follows
+
+                            <h3>
+                                \[ x^3 = 9(x^2 - 3y^2) \]
+                            </h3>
+
+                        </p>
+
+                        <p>
+                            <b>Question: </b> Given a point (a, b) on the curve, come up with an expression for a line (with x as the independent variable) that is tangent to the curve at that point.  <b>Please attach your work to your writeup.</b>
+                            
+                        <p>
+                            <b>Question: </b> Given a parameter <b>t</b>, it is possible to find an <b>a</b> and <b>b</b> on the curve so that \[ a = 3(3-t^2) \] and \[ b = t(3 - t^2) \].  Show visually that the line is tangent to the curve using the <a href = "https://www.maplesoft.com/support/help/Maple/view.aspx?path=plots/implicitplot">implicitplot</a> command, for several different choices of <b>t</b>.  
+                        </p>Hint: Have a look at the <a href = "../../Math111_F2019_Review/ImplicitDifferentiationLoops.html">examples from class</a> (they are in Sage, but they should still help)
+                        </p>
+
+                        </div>
+                    </div>
+                    
+                    <script src="highlight.min.js"></script>
+                    <script src="highlightjs-line-numbers.min.js"></script>
+                    <script>
+                        hljs.initHighlightingOnLoad();
+                        //hljs.initLineNumbersOnLoad();
+                    </script>
+
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+                var sc_project=7309088; 
+                var sc_invisible=1; 
+                var sc_security="f655b56d"; 
+                </script>
+                <script type="text/javascript"
+                src="http://www.statcounter.com/counter/counter.js"></script>
+                <noscript><div class="statcounter"><a title="free hit counter"
+                href="http://statcounter.com/" target="_blank"><img class="statcounter"
+                src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+                counter"></a></div></noscript>
+                <!-- End of StatCounter Code -->
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><!

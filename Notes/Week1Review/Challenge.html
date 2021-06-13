@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h2>Week 1 Challenge Problems</h2>
+										<h3>Christopher Tralie</h3>
+									</header>
+									
+									
+									<h2><a name = "evenfns">The Sum of Even Functions</a></h2>
+									<p>
+										<h3>
+											<u>Question:</u> 
+											<p>
+													If <code>f<SUB>1</SUB>(x)</code> is even and <code>f<SUB>2</SUB>(x)</code> is even, then <code>f(x) = f<SUB>1</SUB>(x) + f<SUB>2</SUB>(x)</code> is
+													<ul>
+														<li>Even</li>
+														<li>Odd</li>
+														<li>Not necessarily either</li>
+													</ul>
+											</p>
+										</h3>
+
+										<h3><u>Answer</u></h3>
+
+										<p>
+											First, it might be a good idea to start playing around with functions.  For example, what if you let \[f_1(x) = 5x^2\] \[f_2(x) = -x^4 \].
+										Let's look at this maple (you can also test values by hand)
+										</p>
+
+										<img src = "Example1.png">
+
+										<p>
+											<code>f</code> certainly looks even in this example!  And you can try other examples and you will continue to see even results.  But how do we prove this in general?  Well, let's go back to the definition of even functions: a function <code>g</code> is even if and only if \[ g(x) = g(-x) \]
+
+											Using this fact, we can do the following transformation to <code>f(x)</code>:
+											
+											<table>
+												<tr><td>\[ f(-x) = f_1(-x) + f_2(-x) \]</td><td>Plugging in <code>-x</code></td></tr>
+												<tr><td>\[ f(-x) = f_1(x) + f_2(x) = f(x) \]</td><td>Using the fact that <code>f1</code> and <code>f2</code> are even functions</td></tr>
+											</table>
+											Since we have now shown that \[ f(x) = f(-x) \], we have finished the proof that <code>f(x)</code> <b>is even</b> 
+											
+
+											
+										</p>
+
+									</p>
+
+									<HR>
+									<h2><a name = "oddfns">The Sum of Odd Functions</a></h2>
+									<p>
+										<h3>
+											<u>Question:</u> 
+											<p>
+													If <code>f<SUB>1</SUB>(x)</code> is odd and <code>f<SUB>2</SUB>(x)</code> is odd, then <code>f(x) = f<SUB>1</SUB>(x) + f<SUB>2</SUB>(x)</code> is
+													<ul>
+														<li>Even</li>
+														<li>Odd</li>
+														<li>Not necessarily either</li>
+													</ul>
+											</p>
+										</h3>
+
+										<h3><u>Answer</u></h3>
+
+										<p>
+											Again, let's play around with some odd functions.  For example, what if you let \[f_1(x) = x^3 \] \[f_2(x) = -2x \].
+										Let's look at this maple (you can also test values by hand)
+										</p>
+
+										<img src = "Example2.png">
+
+										<p>
+											<code>f</code> certainly looks odd in this example!  And you can try other examples and you will continue to see odd results.  But how do we prove this one now?  Again, let's apply the definition: a function <code>g</code> is odd if and only if \[ g(x) = -g(-x) \]
+
+											Using this fact, we can do the following transformation to <code>f(x)</code>:
+											
+											<table>
+												<tr><td>\[ f(-x) = f_1(-x) + f_2(-x) \]</td><td>Plugging in <code>-x</code></td></tr>
+												<tr><td>\[ f(-x) = -f_1(x) + -f_2(x) = -f(x) \]</td><td>Using the fact that <code>f1</code> and <code>f2</code> are odd functions and factoring out a negative</td></tr>
+											</table>
+											Since we have now shown that \[ f(x) = -f(-x) \], we have finished the proof that <code>f(x)</code> is odd
+											
+
+											
+										</p>
+
+									</p>
+
+
+
+									<HR>
+										<h2><a name = "oddfns">The Sum of An Even And Odd Function</a></h2>
+										<p>
+											<h3>
+												<u>Question:</u> 
+												<p>
+														If <code>f<SUB>1</SUB>(x)</code> is odd and <code>f<SUB>2</SUB>(x)</code> is even, then <code>f(x) = f<SUB>1</SUB>(x) + f<SUB>2</SUB>(x)</code> is
+														<ul>
+															<li>Even</li>
+															<li>Odd</li>
+															<li>Not necessarily either</li>
+														</ul>
+												</p>
+											</h3>
+	
+											<h3><u>Answer</u></h3>
+	
+											<p>
+												Again, let's play around with some odd functions.  For example, what if you let \[f_1(x) = x^3 \] \[f_2(x) = x^2 \].
+
+												In this example, 
+												\[ f(-1) = (-1)^3 + (-1)^2 = 0\]
+												and 
+												\[ f_1(1) = (1)^3 + (1)^2 = 2 \]
+
+												Uh oh.  Actually, we've already found a counter example where the function is neither even or odd.  So in general, all bets are off with the sum of even and odd functions
+	
+												
+											</p>
+	
+										</p>
+	
+
+
+						</div>
+					</div>
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+					<!--Syntax highlighting in Javascript!-->
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shCore.js"></script>
+					<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+					<link type="text/css" rel="stylesheet" href="../../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+					<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../../index.html">General</a></li>
+										<li><a href = "../../Schedule/index.html">Schedule</a></li>
+										<li><a href = "../../Labs/index.html">Maple/Sage Labs</a></li>
+										<li><a href = "../../Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements										
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>

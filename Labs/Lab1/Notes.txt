@@ -1,0 +1,9 @@
+*Copy in Ann Marie's lab
+*Translate above into Sage
+
+Questions To Add:
+* Polynomial long division
+* Shifting polynomial function, plotting 2
+* Shifting exponential, then scaling exponential, and proving
+* Designing parabola that satisfies certain parameters
+* Limit definition of e, versus taylor series of e^x evaluated at 1.  What do you notice about these two?  Extra credit: What number do they seem to be approaching?

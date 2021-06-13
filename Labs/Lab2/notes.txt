@@ -1,0 +1,12 @@
+* Root finding intermediate value theorem
+* A problem about f(x) = e^(sqrt(4x^2+2)) having a derivative like e^x 
+* Find Usain Bolt's speed using a spline
+* Hermite polynomials and gaussian derivatives
+* Tschirnhausen cubic implicit differentiation
+
+
+
+Skipped:
+* Slant asymptotes discovery, using builtin polynomial long division
+* Vertical and horizontal asymptotes plotting
+* Numerically estimating critical points

@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h2>Week 1 Review Problems</h2>
+										<h3>Christopher Tralie</h3>
+									</header>
+									
+									
+									<h2><a name = "domainrange1">Domain/Range Example 1</a></h2>
+									<p>
+										<h3>
+											<u>Question:</u> 
+											<p>
+													If \[ f(x) = (64-x^2)^{\frac{5}{2}} \]
+													then what is the domain/range of <code>f(x)</code>?
+											</p>
+										</h3>
+
+										<h3><u>Answer</u></h3>
+										<p>
+										Note that this is a slightly different example from the one we gave in class today (the upper semicircular arc), but we can reason about it in a similar way.  Recall that \[ a^{\frac{5}{2}} \]  is the same thing as raising <code>a</code> to the fifth power and then taking the square root (the numerator says to which power we take it, and the denominator says to which root).  If <code>a</code> is negative, then <code>a<SUP>5</SUP></code> is also negative, because it has an odd number of negative factors.  Then we would be taking a square root of a negative number, which is undefined in this class.  So in this example, we need that
+
+										\[ 64-x^2 > 0 \]
+
+										or in other words
+
+										\[ x^2 < 64 \]
+
+										This implies that the domain is
+
+										\[ [-8, 8] \]
+
+										including the endpoints +/-8 where the function is zero.  But we can't go less than -8 or more than 8.  
+										</p>
+
+										<p>
+											Well what about the range?  What's the largest number we can get?  In this case, it turns out to be when we plug in x=0, which is
+
+											\[ (64-0^2)^{\frac{5}{2}} = (64)^{\frac{5}{2}} = 32768 \]
+
+											Also note that the smallest value is 0 at +/- 8 (we can never get a negative from doing a square root).  So the range is
+
+											\[ [0, 32768] \]
+										</p>
+
+										<p>
+											Just so you can see what the plot looks like, we'll do that in Maple:
+											<BR>
+												<img src = "Review1.png">
+										</p>
+											
+
+									</p>
+
+
+
+								<hr><h2><a name = "domainrange2">Domain/Range Example 2</a></h2>
+									<p>
+										<h3>
+											<u>Question:</u> 
+											<p>
+													If \[ f(x) = \frac{1}{x-4} \]
+													then what is the domain/range of <code>f(x)</code>?
+											</p>
+										</h3>
+
+										<h3><u>Answer</u></h3>
+										<p>
+											Here we have to be careful because there's a value of <code>x</code> that makes this undefined.  In fact, when <code>x = 4</code>, we end up with <code>1/0</code>, which is invalid.  So the domain cannot include <code>x = 4</code>.  We can write the domain using set notation as
+
+											\[ (-\infty, 4) \cup (4, \infty) \]
+
+											Notice how the domain is up to but excluding 4 on both ends.
+										</p>
+
+										<p>
+											Well what about the range?  Here's where another interesting thing happens, because we can't actually ever reach zero.  If we let <code>x</code> become a very large positive number, we can get very close to zero from above, but we never reach it.  Similarly, if we let <code>x</code> be a very large negative number, we get very close to zero from below, but we never reach it.  So the range is
+											\[ (-\infty, 0) \cup (0, \infty) ]
+
+											A plot of this function, which is known as a "hyperbola," is shown below
+
+											<BR>
+												<img src = "Review2.png">
+												<BR>
+											As a sneak preview for limits, the line <code>y=0</code> is a "horizontal asymptote" and the line <code>x = 4</code> is a "vertical asymptote"
+										</p>
+									</p>	
+
+
+
+									<hr><h2><a name = "domainrange3">Domain/Range Example 3</a></h2>
+									<p>
+										<h3>
+											<u>Question:</u> 
+											<p>
+													If \[ f(x) = \frac{1}{x-4} \]
+													then what is the domain of <code>f(f(x))</code>?
+											</p>
+										</h3>
+
+										<h3><u>Answer</u></h3>
+										<p>
+											So we start off with the same function as the above example, but we compose it with itself.  The composite function is then
+
+											<h2>
+											\[f \circ f (x) = \frac{1}{\frac{1}{x-4}-4} \]
+											</h2>
+
+											If we end up with an undefined value at any point in this expression, then the composition is undefined for that input!  For instance, if <code>x=4</code>, this is still undefined.  Another way to look at this is that it fails to be defined on the first application of <code>f</code>, so we have to stop there (we can't plug an undefined value into the second <code>f</code>).  But there is still one more value that can cause us problems when the denominator of <code>f(f(x))</code> is zero.  To solve for this, we do
+
+											\[ \frac{1}{x-4}-4 \]
+
+											\[ \frac{1}{x-4} = 4 \]
+
+											\[ 4(x-4) = 1 \]
+
+											\[ 4x = 17 \]
+
+											\[ x = 17/4 \]
+
+											So the domain of this function actually excludes both 4 and 17/4, so the final expression for the domain is
+
+											\[ (-\infty, 4) \cup (4, \frac{17}{4}) \cup (\frac{17}{4}, \infty) \]
+
+										</p>
+
+									</p>
+
+									<hr><h2><a name = "transformation1">Transformation Example 1</a></h2>
+									<p>
+										<h3><u>Question:</u>
+											<p> If
+											\[ g(x) = 4f(\frac{x}{2} - 3) + 12 \]
+											then what does <code>g(x)</code> to do the graph of <code>f(x)</code>?
+										</p>
+										</h3>
+										<h3><u>Answer:</u></h3>
+										Don't forget to go back to the <a href = "https://www.geogebra.org/m/yxa2dw5x">interactive tool</a> if you're having trouble with this example!
+										To answer this, we should always go back to the "canonical form" shown in that tool, which is 
+
+										\[ g(x) = a f \left( b(x - h) \right) + k \]
+
+										In this example, the canonical form is
+
+										\[ g(x) = 4f \left( \frac{1}{2} (x - 6) \right) + 12 \]
+
+										Then we recall that 
+
+										<ul>
+											<li><code>|a| > 1</code> stretches the function in the y direction by <code>|a|</code>, and <code>|a| < 1</code> compresses the function by a factor of <code>1/|a|</code> in the y direction.  Furthermore, if <code>a < 0</code>, then the graph is also <i>reflected about the x-axis</i> (flipped upside down)</li>
+
+											<li><code>k</code> simply shifts the graph up y by the amount <code>k</code></li>
+
+											<li>The graph is shifed along x by the amount <code>h</code>.  If <code>h</code> is positive, then <code>f(x-h)</code> shifts to the right, and if it is negative, the graph is shifted to the left.</li>
+
+											<li>If <code>|b| < 1</code>, then the graph is stretched out by a factor of <code>1/|b|</code> in the x direction <i>about the line <code>x = h</code></i>.  If <code>|b| > 1</code>, then the graph is compressed by a factor of <code>|b|</code> in the x direction about the line <code>x = h</code>.  If <code>b < 0</code>, the graph is also reflected about the line <code>x = h</code> (flipped horizontally)</li>
+										</ul>
+
+										So by referring to the above list, we see that <code>f</code> undergoes the following transformations
+										<ol>
+											<li>It is scaled vertically by a factor of 4</li>
+											<li>It is shifted vertically by 12 units</li>
+											<li>It is shifted to the right by 6 units</li>
+											<li>It is stretched out by a factor of 2 about the line <code>x = 6</code></li>
+										</ol>
+									</p>
+								<hr><h2><a name = "slope2">Slope Function Example 1</a></h2>
+								<p>
+										<h3><u>Question:</u>
+											<p> If
+											\[ f(x) = |3x - 12| \]
+											then what is the slope function <code>s(x)</code> of <code>f(x)</code>?
+										</p>
+										</h3>
+										<h3><u>Answer:</u></h3>
+										Just to make sure we're on the same page, <code>s(a)</code> gives the slope of <code>f(x)</code> at <code>x = a</code>.  If it wasn't for the absolute value, then this would be a line of slope 3 everywhere.  But the absolute value flips things.  Factoring this will help
+
+										\[ f(x) = |3(x - 4)| \]
+
+										Now we see that 
+
+										\[ f(x) = \left\{ \begin{array}{cc} 3(x - 4) & x > 4 \\ -3(x - 4) & x < -4 \end{array} \right\} \]
+
+										So the slope is actually negative when <code>x < 4</code>.  Therefore, the slope function is
+
+										\[ s(x) = \left\{ \begin{array}{cc} 3 & x > 4 \\ -3 & x < -4 \end{array} \right\} \]
+								</p>
+
+
+						</div>
+					</div>
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+					<!--Syntax highlighting in Javascript!-->
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shCore.js"></script>
+					<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+					<script type="text/javascript" src="../../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+					<link type="text/css" rel="stylesheet" href="../../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+					<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../../index.html">General</a></li>
+										<li><a href = "../../Schedule/index.html">Schedule</a></li>
+										<li><a href = "../../Labs/index.html">Maple/Sage Labs</a></li>
+										<li><a href = "../../Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements										
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>

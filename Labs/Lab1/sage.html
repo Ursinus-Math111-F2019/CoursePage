@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1, Fall 2019</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+        <link rel="stylesheet" href="default.min.css">
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1, Fall 2019</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+                                        <h2>Lab 1: Functions And Getting Started with Sage<BR>(<a href = "maple.html">Click here</a> for the Maple version)</h2>
+                                        
+                                        <h3>By Chris Tralie</h3>
+                                    </header>
+
+                                    <h2>Table of Contents</h2>
+                                    <h3>
+                                    <ul>
+                                        <li><a href = "#gettingstarted">Getting Started</a></li>
+                                        <li><a href = "#part1">Part 1: The Basics of Sage Features And Syntax</a>
+                                            <h5>
+                                            <ul>
+                                                <li><a href = "#basicarithmetic">1. Basic Arithmetic And Keyboarding</a></li>
+
+                                                <li>
+                                                    <a href = "#basicnumerical">2. Entering Basic Numerical Expressions</a>
+                                                </li>
+                                                <li>
+                                                    <a href = "#specialsymbols">3. Numerical Expressions with Special Symbols</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href = "#algebraic">4. Algebraic Expressions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href = "#functions">5. Entering Functions</a>
+                                                </li>
+
+                                                <li><a href = "#changing">6. Changing Previously Entered Code in A Sage Notebook</a></li>
+                                            </ul>
+                                            </h5>
+                                        </li>
+                                        <li><a href = "#part2">Part 2: Algebraic Calculations</a>
+                                            <h5>
+                                            <ul>
+
+                                                <li><a href = "#equationscommands">1. Solving Equations Using Sage Commands</a></li>
+
+                                                <li><a href = "#factoring">2. Factoring</a></li>
+
+                                                <li><a href = "#longdivision">3. Polynomial Long Division</a></li>
+
+                                                <li><a href = "#simplify">4. Simplify</a></li>
+
+                                                <li><a href = "#expand">5. Expand</a></li>
+                                            </ul>
+                                            </h5>
+                                        </li>
+                                        <li><a href = "#part3">Part 3: Stretching And Shifting</a></li>
+                                        <li><a href = "#part4">Part 4: A Mysterious Number</a></li>
+                                    </ul>
+                                    </h3>
+
+                                    <h2><a name = "gettingstarted">Getting Started with Sage</a></h2>
+
+                                    <p>
+                                    Sage is a technical computing and documentation software package for mathematics based on the Python programming language.  You will use Sage use to explore some of the concepts we learn in calculus in groups of two.  
+                                    
+                                    
+                                    <h3><a name = "installation">Installing Sage</a></h3>
+                                    To install Sage on your local machine, please <a href = "http://www.sagemath.org/download.html">click here</a> and download and install the appropriate binaries based on your machine.  Here are a few more notes per system
+                                    <ul>
+                                        <li><u>Mac Users:</u>
+                                            
+                                            <p>When choosing between Intel and PowerPC in the download menu, you will most likely want Intel.  Also be sure to download the <b>.app.dmg</b> file and not just the <b>.dmg</b> file.  When you are finished installing and go to open the program, it will ask you what directory you would like to be your "notebook directory."  This is where you will be saving your labs (by default is is Documents).
+                                            </p></li>
+
+                                        <li>
+                                            <u>Windows Users:</u>
+                                            
+                                            <p>Once you download and install the appropriate .exe file, you will likely get three different options for running sage.  You want to launch <code>Sage Notebook</code> for this class.
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <u>Linux Users:</u>
+
+                                            <p>
+                                            If you're using Linux, you probably already know what to do :).  Since Sage is Python-based, if you already have Python, it's relatively straightforward to get setup.  Since I use the <a href = "https://www.anaconda.com/distribution/">Anaconda Python</a> distribution on my machine, my preferred way of getting Sage setup is to use the <a href = "https://anaconda.org/conda-forge/sage">conda-forge</a> distribution after installing.  Then, you can run <BR><BR>
+
+                                            <code class="language-bash">
+                                                jupyter notebook
+                                            </code>
+                                            <BR><BR>
+
+                                            from the console, and it will launch a Python notebook server, from which you can launch a Sage notebook, as described below.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    Please post on Microsoft Teams if you are having issues with the installation.
+                                    </p>
+
+                                    <h3>Opening A Notebook</h3>
+                                    <p>
+                                        Once Sage has been downloaded, open up Sage notebook (as described above for Windows, Mac, or Linux).  This will launch a local web server, from which you can create Sage notebooks to hold all of your computations.  To create a new notebook, go to <code>New -> SageMath X.X</code>, as shown below:<BR><BR>
+
+                                            <img src = "SageNewNotebook.png">
+                                    </p>
+
+                                    <h3><a name = "format">Lab Report Format</a></h3>
+
+                                    <p>
+                                        Rather than using Microsoft Word or some other text editor, you will actually be writing your lab reports inside of a Sage notebook itself.  Sage notebooks have both a <code>Code Mode</code> and a <code>Markdown Mode</code>, which can be used for mathematical computations and text, respectively.  To insert a new cell, go to the <code>Insert</code> menu at the top of the notebook.  To change the type of a cell, select the type from the menu at the top of the notebook, as shown below
+                                    </p>
+
+                                            <img src = "SageCodeMarkdown.png">
+
+                                    <p>
+                                        Once you have finished editing the markdown or code, click <code>Run</code> to display the result.  The image below shows an example of 4 cells, the first which is markdown, the second which is code, the third which is markdown again, and the fourth which is code.  Note that markdown is fairly straightforward, but you have to do some mild formatting to get different text sizes.  See, for instance, <a href = "https://www.markdownguide.org/cheat-sheet/">this Markdown cheat sheet</a>, which is way beyond what we need, but which is good to study for other tasks beyond the course.  As an example, the top cell looks like this before you click "run"
+                                        <BR><BR>
+                                        
+<pre><code>## Part 1 Example: Parabolas
+This is some text written in Markdown Mode.  First, let's make sure that 1+1 = 2
+</code>
+                                        </pre>
+                                        
+                                        The "##" means "heading 2," which is larger text than most text, and which you can use to indicate the beginning of a new section in your document.  After running these four cells, Sage automatically adds another cell with the blinking cursor where you can continue.  The new cells are always in math mode by default.
+
+                                        <b>NOTE:</b> There is an extensive list of <a href = "https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">keyboard shortcuts</a> that you can use in Jupyter notebooks, which you may appreciate.
+                                    </p>
+
+                                    <img src = "ExampleModesSage.png">
+
+
+                                    <h3>Other Tips</h3>
+                                    <ul>
+                                        <li>
+                                            <p>
+                                            Save your Sage notebook periodically just as you would while working with any document (this should be done automatically from time to time, but it's a good habit to get into). The files created by Sage will have an <code>.ipynb </code> extension.  If you want to return to a particular <code>.ipynb </code> file navigate to it in Sage notebook, and open it.
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                        <p>
+                                            You should familiarize yourself with the extensive help that is available through Sage.  <a href = "http://doc.sagemath.org/html/en/">Click here</a> to view tutorials and FAQ on <a href = "http://www.sagemath.org/">sagemath.org</a>.  The labs will be designed to walk you step by step <b>but you may need to troubleshoot at times, so use the resource!</b>.  One quick way to get help is to type <code>command?</code> in a code cell, which will return the help section for that command.  For instance, type <code>solve?</code> in a cell. Sage will return the help pages relating to the <code>solve</code> command.
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                           Please be sure to spell check your document.
+                                        </li>
+                                    </ul>
+
+
+
+                                    <h3>What To Hand In / General Guidelines</h3>
+
+                                    <ul>
+                                    <li>
+                                        When you are finished all of the steps in the lab and you have written up answers to the associated questions, you should turn in your <code>.ipynb</code> Sage notebook that you saved.  Each group will submit exactly one <code>.ipynb</code> file via Canvas. The title of your electronic version should include both lab partner names & Lab # for ex., “Taylor  Swift and Ella O’Connor Lab #1”.
+                                    </li>
+                                    
+
+                                    <li>
+                                    You should Answer all questions with complete sentences in Sage. Clearly identify each question.  You will use the markdown and code modes, as <a href = "#format">described above</a>, to create a readable document with grammatically correct language.  It is essential to communicate effectively using the appropriate mathematical language.
+                                    </li>
+
+                                    <li>
+                                    Label all graphs, axes, and explain your plots!
+                                    </li>
+                                    
+                                    <li>
+                                    Add any additional observations and comments that you may have. 
+                                    </li>
+
+                                    <li>
+                                    Please make sure that your report is readable to a person not literate in Mathematics.  Someday you will be working in industry or academia, and you will need to effectively communicate your findings to your peers.
+                                    </li>
+
+                                    </ul>
+
+
+                            <h2><a name = "part1">Part 1: The Basics of Sage Features And Syntax</a></h2>
+
+                            <p>
+                                The purpose of the first part of the assignment is simply to get you familiar with the basics of Sage, so just follow the directions and execute the commands in different notebook cells.  Your final <code>.ipynb</code> file should show that you have successfully run all of the commands.  
+                            </p>
+                            
+                            <h3><a name = "basicarithmetic">1. Basic Arithmetic And Keyboarding</a></h3>
+                            When you launch a Sage notebook, you start with a blank document with menus and toolbars at the top.  Explore each of the menus by expanding them.  The document will start you off with a blank cell in code mode.  At the cursor, you can start typing a math statement.  Click the <code>Run</code> button at the top of the notebook, or press <code>Shift Enter</code> to see the result.  <b>Be sure you are in code mode and not markdown mode</b>.  For example, you should do the following for this lab:
+                            <ul>
+                                <li>Type in <code>3+2 <b>Shift Enter</b></code></li>
+                                <li>The result is returned on the next line with a label <code>Out[1]</code> that increments with each command.</li>
+                                
+                                <!--
+                                <li>You can access the results to use in other computations by typing <code>_X</code>, where X is the number of the output.  For instance, type <code>_1^3</code>.  This should return 8, since that's (1+1)<SUP>3</SUP>.  </li>-->
+                            </ul>
+                            
+
+                            <h3><a name = "basicnumerical">2. Entering Basic Numerical Expressions</a></h3>
+
+                            <ul>
+                                <li>
+                                    <u>Fractions:</u>
+                                    <p>Sage calculates exact answers by, so fractions remain as fractions throughout all calculations to reduce approximation errors in multi-step problems.  On a new line, enter 
+                                    </p>
+
+                                    <p>
+                                        <code>1/2 + 1/3</code>
+                                    </p>
+
+                                    Then press <code>Shift Enter</code> or the <code>Run</code> button for the result of <code>5/6</code>.</li>
+                                </p>
+
+                                <li>
+                                    <u>Approximate Numerical Representations:</u>
+                                    <p>
+                                    It is possible to output numerical approximations of exact expressions in Sage.  For instance, if you instead type<BR><BR>
+
+                                    <code>
+                                        numerical_approx(1/2 + 1/3, digits=50)
+                                    </code><BR><BR>
+
+                                        You should get the following output:<BR><BR>
+                                            <img src = "Sage_Approximate.png"><BR><BR>
+                                    You can change the number of digits by making the <code>digits</code> parameter something different.
+                                    </p>
+
+                                    <p>
+                                        A shorthand for this is actually <code>N(1/2 + 1/3)</code>, so if you want to use this shorthand, be careful not to redefine <code>N</code> anywhere in your code!  <b>We will be using this shorthand for the rest of the lab whenever we want a numerical value of something.</b>
+                                    </p>
+
+                                    <p>
+                                        <b>NOTE: </b>  If you are ever unsure whether you have a numerical value or an exact expression, simply use the <code>type</code> command.  For instance, <code>type(1/2 + 1/3)</code> will return <code>&lt;class 'sage.rings.rational.Rational'&gt;</class></code> (a type which actually stores the numerator and denominator of a rational number exactly), while <code>type(N(1/2 + 1/3))</code> will return <code>&lt;class 'sage.rings.real_mpfr.RealNumber'&gt;</class></code> (a real number decimal approximation to the rational number).
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>Numeric Formatting Options:</u>
+                                    <p>
+                                    If your problem already uses decimals, then Sage keeps to the same format.  However, you can apply different formatting to numeric results by using Python string formatting conventions.  For those curious, <a href = "https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting">click here</a> to read more about this.  This is an advanced feature that we will not normally need for this class, but for completeness, typing <code>"%.5e"%(1/2 + 1/3)</code> will output the decimal to 5 places and display the result in scientific notation:<BR><BR>
+                                        <img src = "ScientificNotation_Sage.png">
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>Exponent Symbols and Square roots:</u>
+
+                                    <p> In Sage, there are two ways to take square roots. The first is to raise an expression to the <code>1/2</code> power with the <code>^</code> symbol for exponents.  For example, type <code>25 ^ (1 / 2)</code> in a code cell and run it.  You should have an output of <code>5</code>.  Alternatively, for square roots in particular, you can use the <code>sqrt()</code> command. For example, type in <code>sqrt(25)</code> and run it. You should get an output of <code>5</code> here as well. <BR>
+                                        <b>NOTE:</b> It is also possible to write <code>25**0.5</code> for a square root, or a**b for a general a<SUP>b</SUP> exponent, instead of using the carat ^.  This is the more "pythonic" way of doing things, but the carat is more similar to what other mathematical languages use, and though ^ doesn't work in Python, it works in Sage.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>
+                                        Multiplication:
+                                    </u>
+
+                                    <p>
+                                    Multiplication in Sage is done using the <code>*</code> symbol. For example, type in <code>3*2</code> and execute. You should receive and output of <code>6</code>. <b>You should always use <code>*</code> to multiply things together</b>, including functions, numbers, constants, and general expressions, to avoid confusion.  <b>It is a very common error to omit this symbol</b>.
+                                    </p>
+                                </li>
+                            </ul>
+
+
+                        <h3><a name = "specialsymbols">3. Numerical Expressions with Special Symbols</a></h3>
+
+                        <p>
+                          In addition to fractions, special symbols such as <code>e</code> and <code>π</code> remain as such throughout all calculations, unless you redefine them (which is not recommended!).
+                        </p>
+
+                        <ul>
+                            <li><u>The constant "pi"</u>
+                            <p>
+                                Type in <code>5/6 + pi</code> and run the cell.   You should have an output of <code>pi + 5/6</code>, which is equivalent to the expression
+
+                                \[ \frac{5}{6} + \pi \]
+
+                                <i>It is important to use both lower case letters pi here</i>, since Sage will not understand "Pi" or "PI" or "pI". As before, typing in <code>N(5/6 + pi)</code> and executing will give you a decimal approximation of 5/6 + π.
+                            </p>
+                            </li>
+
+                            <li><u>The constant "e"</u>
+
+                            <p>
+                                    By default, the letter <code>e</code> is defined to be the special number <b>e</b> in Sage.  Just as with "pi" expressions involving "e" will keep "e" as an exact letter, unless you redefine it somewhere in your notebook (not usually recommended!).  To see <b>e</b> out to 5 decimal places, type a cell with <code>N(e, digits=5)</code>.   <i>Take note of this decimal value; it may come in handy later in this lab</i>
+                                
+                                </p>
+
+                            </li>
+                            </ul>
+
+                            <h3><a name = "algebraic">4. Algebraic Expressions</a></h3>
+
+                            <ul>
+                                <li><u>Expressions with variables:</u></li>
+                            <p>
+                                In Sage, you may enter all sorts of expressions with variables having any name you choose. For example, type in the following code in a cell and execute:
+<pre>
+<code class="python">y = var('y')
+f = (x + 2*y)^3
+</code>
+</pre>
+
+
+
+
+                                You have now entered the expression \[(x+2y)^3\] and saved it in a variable named <code>f</code>. Type in <code>f</code> by itself in a cell and execute. Notice that Sage does not automatically expand these expressions for you! Now type in <BR><code>expand(f)</code><BR> and execute. Sage will now output the expression you gave it, but expanded. Note that this expanded expression is not saved to the variable <code>f</code>. Sage will still think <code>f</code> is the non-expanded expression you gave it. You can save the expanded expression to a variable called <code>g</code> by typing <BR><code>g = expand(f)</code><BR> and executing. We may also factor expressions using the <code>factor</code> command. Type in <BR><code>factor(g)</code><BR> and execute.  We should now be back to where we started.
+                            </p>
+
+                            <li><u>Evaluating Expressions At Points:</u></li>
+                            <p>
+                                Oftentimes, we want to substitute numbers into our variables.  In the above example, it is possible to simply write <code>f(1, 2)</code> to evaluate the expression at x=1 and y=2.  To be safe, it is a better practice to specify the inputs to the function explicitly, so type in and execute <code>f(x=1, y=2)</code>. You should have an output of <code>125</code>.
+                            </p>
+                            <p>
+                                <b>NOTE: </b> You should be careful when using the = sign in your code.  The command <code>f(x=1, y=2)</code> only sets the x=1 and y=2 in the context of this expression (as "arguments" to the function <code>f</code>), but if we had instead typed in <code>x=1</code> somewhere else in the code and executed, it would have set <code>x</code> to be 1 <i>for the remainder of the notebook!</i>.  This is probably not a good idea, since we often want to use <code>x</code> as a variable in our expressions!  If you make this mistake, you can set <code>x</code> to be back what it was by typing <code>x = var('x')</code>, much like we defined y above.
+                            </p>
+
+                            <li><u><a name = "plottingexpressions">Plotting Expressions:</a></u></li>
+
+                            <p>
+                            Type in <code>show(plot(x^2-4))</code> and execute. Sage will display a graph of \[x^2-4\] and will pick a domain for you. We can change the domain if we wish to view a different part of the graph. Type in <code>show(plot(x^2-4, 0, 15))</code> and execute. This will show you the graph from x=0 to x=15.
+                            </p>  
+                            <p>
+                                Let's now look at a slightly more complicated example.  Input the code below into a cell:
+                            </p><pre><code language="python">p1 = plot(x^2-4, (x, 0, 15), ymin=-100, ymax=200, axes_labels=['x-axis','y-axis'], legend_label='f(x)')
+h = var('h')
+p2 = plot(200-h^2, (h, 0, 15), ymin=-100, ymax=200, color="red", legend_label='f(h)', linestyle='--')
+show(p1 + p2)
+</code>
+</pre>
+                            This should plot the functions \[ x^2-4 \text{ and } 200-h^2 \] as a solid blue line and a dotted red line, respectively.  Notice how we have explicitly said to set the range of <code>x</code> from 0 to 15, and we have also defined a variable <code>h</code> and also set its range to be from 0 to 15.  <i>Since the <code>plot</code> command is expecting <code>x</code> as the input variable to be varied, this line is necessary when the expression includes a variable that is not h</i>.  Take note also of the code that's used to change the range extents from -100 to 200 (they were set automatically before), and the code that comes up with axis labels and legend labels for the expressions.  Finally, note how the <code>show</code> command was called separately from the two plots commands now, so we could write them on separate lines without clutter.  For a full list of options for plotting (of which there are many), type <code>plot?</code> in a cell.
+                            </ul>
+
+                            <h3><a name = "functions">5. Entering Functions</a></h3>
+
+                            <ul>
+                                <li><u>Functions:</u></li>
+                                <p>
+                                One may also input functions into Sage. Recall that a function is a rule that takes a number as input and returns a number as output. Type in the following <BR>
+<pre><code language="python">h = lambda x: (x+1)^2 + 5</code></pre>
+                                and execute. We have just defined a function, called <code>h</code>, which takes a number (or expression!) as input, adds 1 to it, squares it, adds 5 to it, and then returns that value. For example, typing in <code>h(3)</code> and executing will return 21. Typing in <code>h(pi)</code> and executing will return \[ (\pi+1)^2 + 5 \] Typing <code>h(f)</code> and executing will square the expression <code>f</code> we defined earlier and then add 5 to it!  You should get 
+                                
+                                \[ ((x + 2y)^3 + 1)^2 + 5 \] 
+                                
+                                We can get the expression \[ x^2 + 5\] by simply typing <code>h(x)</code> and executing.  We can also compose a function with itself very easily by typing <code>h(h(x))</code>, which you should also execute and <i>check by hand to make sure it's correct</i>.
+                                </p>
+
+                                <p>
+                                <b>NOTE: </b> For those interested, the <code>lambda</code> keyword defines a so-called "anonymous function" in Python.  <a href = "https://realpython.com/python-lambda/">Click here</a> for more information.  For the purposes of this course, though, we will usually just be defining single variable functions, so just refer to the above example.
+                                </p>
+
+                                <p>
+                                    <b>NOTE ALSO:</b> For more examples of how to define functions in Sage, <a href = "http://doc.sagemath.org/html/en/tutorial/tour_help.html#functions-indentation-and-counting">click here</a>.  The examples here use the more standard syntax of <code>def</code> for defining functions in Python, but it is more verbose.
+                                </p>
+
+                                <li><u>Trigonometric functions and natural logarithm</u></li>
+                                <p>
+                                    Sage will, by default, understand trigonometric functions and will expect their input <b>to be in radians</b>. For example, typing in <code>N(cos(pi))</code> and executing will return an output of -1. Sage will also understand the natural logarithm function. For example, typing in <code>N(ln(1))</code> and pressing Enter will return 0, and typing in <code>N(ln(e))</code> will return 1.  Show that you are able to do this in a cell.
+                                </p>
+
+                                <li><u><a name = "plotfunctions">Plot Functions:</a></u></li>
+
+                                <p>
+                                    We may graph functions in Sage by converting them into expressions. Type in <code>h = lambda x: x^2 - 3</code> and execute. Now, to graph <code>h(x)</code> from x=0 to x=15, type <BR><BR><code>show(plot(h(x), (x, 0, 15)))</code><BR><BR> and execute. This will give the desired graph.
+                                </p>
+
+                            </ul>
+
+                            <h3><a name = "changing">6. Changing Previously Entered Code in A Sage Notebook</a></h3>
+
+                            <ul>
+                                <li>Mathematics in a Sage document are live, so you can go back to make changes and re-execute the cells to obtain a new result.  Sage's state at any point in time is the result of whatever cells you ran in the order that you ran them, regardless of where they appear in the document.  This can be a bit confusing, not only because you can execute cells out of order, but because if you delete a cell that you've already run, Sage still retains all of the variables that you defined in that cell (unless you overwrite them later).  If you get completely confused, you can re-run all of the cells you have in order by going to the <code>Kernel > Restart & Run All</code> menu (but be careful, this will wipe all of the output and start from scratch!)</li>
+
+                                <li>
+                                    Go back to the very first line where you entered <code>3 + 2</code> and change the 2 to a 8.  Then re-execute that cell to obtain a new result of 10 (your final submission for this lab should reflect these changes.  No need to keep both the changes and the original).
+                                </li>
+
+                                <li>
+                                    Go back to the cell where you defined <code>x<SUP>2</SUP> - 4</code> in the <a href = "#plotfunctions">plot functions</a> cell, and change the <code>x<SUP>2</SUP></code> to <code>10*x<SUP>2</SUP></code>. Then re-run the cell and the plot.  Notice the updated graph and the automatically re-adjusted range (your final .ipynb submission should reflect these changes. No need to keep both the changes and the original)
+                                </li>
+                            </ul>
+
+                            <h2><a name = "part2">Part 2: Algebraic Calculations</a></h2>
+
+                            <p>
+                                The second part is a continuation of the first part, with a focus on some additional algebraic tools that exist in Sage.  As before, the <code>.ipynb</code> file should show that you have successfully run all of the commands.  
+                            </p>
+                            
+                                <h3><a name = "equationscommands">1. Solving Equations Using Sage Commands</a></h3>
+                                <ul>
+                                    <li><u>Solving one equation in one variable:</u>
+                                        <p>
+                                        Type in <code>solve(x^2-2,x)</code> and execute. The output will be the two solutions to the equation \[ x^2-2=0 \] The <code>solve()</code> command takes two inputs here: the equation we wish to solve, and the variable we wish to solve for. Notice, as usual, Sage does NOT give us a decimal answer. For numerical approximations of the solutions, you can run
+                                        </p>
+                                        <pre>
+<code language="python">solutions = solve(x^2-2,x, solution_dict=True)
+for sol in solutions:
+   print(N(sol[x], digits=5))
+</code>
+                                            </pre>
+                                            <p>
+                                                This code pulls out each solution and prints the numerical approximation to 5 digits to the console.  Note that the following code solves the same equation, but it is written using slightly different syntax
+                                            </p>
+<pre>
+<code language="python">solve(x^2 == 2,x)
+</code>
+</pre>
+                                            <p>
+                                                But in this case, we're writing the equation
+                                                \[ x^2 = 2 \]
+                                                so this syntax is useful when we don't automatically want the equation to be equal to 0.  <b>Notice the == instead of a single =</b>.  It is a common mistake in Python and other programing languages to use a single = sign, which is an assignment operator, rather than the equality operator, with is two ==.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <u>Solving systems of equations:</u>
+                                            <p>
+                                                Type the following into a cell and execute
+<pre>
+<code language="python">y = var('y')
+solve([x^2*y^2==0, x-y==1], x, y)
+</code>
+</pre>
+                                                You should obtain <BR>
+                                                <code>[[x == 1, y == 0], [x == 0, y == -1]]</code><BR> as output, which is the set of two solutions of this system.  By using the square braces [ and ], we have given Maple a list of equations. We have told Maple that the equations we wish to simultaneously solve are \[ x^2y^2 = 0 \] and \[ x-y = 1 \].  Now run the following code:
+<pre>
+<code language="python">y = var('y')
+solve([x^2*y^2==0, x-y==1, abs(x) > 0], x, y)
+</code>
+</pre>
+This is the same as before, except incorporating the <code>abs(x) > 0</code> inequality adds the additional constraint that \[ x \neq 0 \]
+This example shows how both the absolute value and inequalities are things one can mix into the constraints.
+
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <h3><a name = "factoring">2. Factoring</a></h3>
+                                <p>
+                                    We will use the simple version of the Sage <code>factor</code> command. The factor function computes the factorization of a polynomial by the calling sequence <code>factor(a)</code>, where <code>a</code> is a polynomial.  Type<BR>
+                                        <code>factor(x^3 + y^3)</code><BR>
+                                    Press enter, and the traditional formula will be returned. Now factor the equation
+                                    \[ 6x^2 + 18x - 24 \]
+                                    You should obtain the result 
+                                    \[ 6(x+4)(x-1) \]
+                                </p>
+
+                                <h3><a name = "longdivision">3. Polynomial Long Division</a></h3>
+                                <p>
+                                    Sometimes we want to divide a polynomial by another polynomial that isn't quite a factor, so there will be a remainder left over.  We will now use Sage to perform <a href = "https://en.wikipedia.org/wiki/Polynomial_long_division">polynomial long division</a>, which will be useful in our next lab.  First, type and execute the following code in a cell:
+
+<pre>
+<code language="python">R.&lt;l&gt; = FunctionField(RR) ; R
+S.&lt;t&gt; = RR[] ; S
+</code>
+</pre>
+This should output <code>Univariate Polynomial Ring in t over Real Field with 53 bits of precision</code>.  You should take <a href = "https://www.ursinus.edu/academics/mathematics-and-computer-science/courses/">Math 335</a>, abstract algebra, if you want to know what this all means!  For now, just think of this as some code that sets up Sage to understand polynomials with coefficients and solutions in the real numbers.  Now, create another cell and run the following code to divide \[ t^2 - 4t + 5 \] by \[ t+2 \]
+
+<pre>
+<code language="python">P = t^2 - 4*t + 5
+Q = t+2
+quo, rem = P.quo_rem(Q)
+print("quotient: ", quo)
+print("remainder: ", rem)
+</code>
+</pre>
+
+This should output a quotient of \[ t-6 \] and a remainder of <code>17</code>.  As a sanity check to make sure this is correct, run the multiplication <code>quo*Q + rem</code>, and verify that you get <code>t<SUP>2</SUP> - 4t + 5</code> back.  Now, plot the quotient <code>quo(t)</code> and the rational function <code>P(t)/Q(t)</code> together on the same plot
+
+<pre>
+<code language="python">p1 = plot(P(t)/Q(t), (t, 0, 30), color='red', legend_label='P(t)/Q(t)')
+p2 = plot(quo(t), 0, 30, color='blue', linestyle='--', legend_label='quotient')
+show(p1 + p2)
+</code>
+</pre>
+
+<h3>Question:</h3> Visually, what seems to be happening as <code>t</code> gets larger in the above plot?  The quotient here is known as the <i>slant asymptote</i> of the rational function <code>P(t)/Q(t)</code>.  We will talk about these more in the next lab.
+
+                                </p>
+
+                                <h3><a name = "simplify">4. Simplify</a></h3>
+                                <p>
+                                    Maple's simplify command uses the basic algebraic rules to simplify expressions.  First type<BR><BR>
+                                        <code>h = sin(x)^2 + ln(2*x) + cos(x)^2</code><BR><BR>
+
+                                    On the next line, type <code>h.</code>, and then press the <code>tab</code> key.  A menu like this should pop up:<BR>
+                                        <img src = "Sage_Autocomplete_FullSimplify.png"><BR>
+                                    This tells us all of the operations we can run on <code>,h</code>, the expression we defined (such tabbing for autocomplete is another good trick you can use when you're not sure what your options are).  We see that there is one function called <code>full_simplify</code> that we can run on <code>h</code>.  So let's go ahead and call this with a cell that says<BR><BR><code>h.full_simplify()</code><BR><BR>The result that should appear is \[ \log(2x) + 1 \]
+                                </p>
+
+                                <h3><a name = "expand">5. Expand</a></h3>
+                                <p>
+                                    The <code>expand</code> command distributes products over sums.  This is done for all polynomials.  Type <code>expand((x+1)*(x+2))</code>.  The result that should appear is \[ x^2 + 3x + 2 \]
+                                    For trig functions in particular, there's another function we can use.  Try executing the code<BR><BR>
+                                        <code>(sin(x+y)).simplify_trig()</code><BR><BR>
+                                    <h3>Question: </h3> Does the output look familiar?  Where have you seen this before?
+                                </p>
+                                
+
+                                <h2><a name = "part3">Part 3: Stretching And Shifting</a></h2>
+
+                                <p>
+                                    In this part of the lab, you will apply what you learned above to stretch and scale a function.  First, choose a base for an exponential, and define it as <code>a</code> by running <code>a = #</code>, where <b>#</b> is your number.  Now define an exponential function using your base as 
+
+<pre>
+<code language="python">f = lambda x: a^x
+</code>
+</pre>
+                                </p>
+
+                                <p>
+
+                                Now, plot <code>f(x)</code> and <code>f(x + 2)</code> together on the same plot, over some appropriate range of x.  Make f(x) a solid blue line and f(x+2) a dotted red line. (Go back to the <a href = "#plottingexpressions">plotting expressions</a> and <a href = "#plotfunctions">plotting functions</a> sections if you need a refresher on how to do this).
+                                </p>
+
+                                <p>
+                                <h3>
+                                    Question: What has <code>f(x+2)</code> done to the graph?  Be sure this is clear on your plot
+                                </h3>
+                                </p>
+
+                                <p>
+                                Now, plot <code>f(x)</code> and <code>a^2 * f(x)</code> on the same plot, with the former a solid blue line and the latter a solid green line.  Finally, plot <code>f(x)</code>, <code>f(x+2)</code> and <code>a^2 * f(x)</code> on one plot together, using the same color and line schemes as before.  
+                                </p>
+                                
+                                <p>
+                                <h3>Question:
+                                What do you notice about <code>f(x+2)</code> and <code>a^2*f(x)</code>?  Can you explain why this is happening?</h3>
+
+                                </p>
+
+                                <h2><a name = "part4">Part 4: A Mysterious Number</a></h2>
+
+                                In the final part of the lab, you will use what you know to define functions that you evaluate at different points.  First, define a function <code>f(h)</code> so that 
+                                \[ f(h) = (1 + h)^{1/h} \]
+                                (If you forget how to do this, have a look at the <a href = "#functions">functions section</a>!).  This function is undefined at zero, since it would involve 1/0 in the expression, but you can still evaluate it very close to zero.  So try plugging in numbers that get closer and closer to zero, and record what you get (you can plug in different numbers on different cells).  <b>Be sure you are evaluating it numerically.</b> 
+                                
+                                <h3>Question: What do the first three digits seem to be approaching? </h3>
+
+                                Now, define another function, which is the following expression, up to some number of <code>N</code> terms
+
+                                \[ g(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + ... + \frac{x^N}{N!} \]
+
+                                The code below accomplishes this
+                                <p>
+<pre>
+<code language="python">def gN(x, N):
+    result = 1
+    for i in range(1, N):
+        result += x^i/factorial(i)
+    return result
+g = lambda x: gN(x, N=10)
+</code>
+</pre>
+                                </p>
+
+                                <p>
+                                    Now numerically evaluate <code>g</code> at <code>x = 1</code> for an increasing value of <code>N</code>.  
+                                </p>
+
+                                <h3>Question: What do the first thre digits seem to be approaching?  What does <code>g(1)</code> with a larger <code>N</code> have in common with <code>f(x)</code> around <code>x = 0</code>?</h3>
+
+                                <h3>Extra credit: What number are g(1) and h(0) approaching?</h3>
+                        </div>
+                    </div>
+                    
+                    <script src="highlight.min.js"></script>
+                    <script src="highlightjs-line-numbers.min.js"></script>
+                    <script>
+                        hljs.initHighlightingOnLoad();
+                        //hljs.initLineNumbersOnLoad();
+                    </script>
+
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+                var sc_project=7309088; 
+                var sc_invisible=1; 
+                var sc_security="f655b56d"; 
+                </script>
+                <script type="text/javascript"
+                src="http://www.statcounter.com/counter/counter.js"></script>
+                <noscript><div class="statcounter"><a title="free hit counter"
+                href="http://statcounter.com/" target="_blank"><img class="statcounter"
+                src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+                counter"></a></div></noscript>
+                <!-- End of StatCounter Code -->
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+	

@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>MATH 111: Calculus 1</h1>
+											<h2><a href = "http://www.ursinus.edu">Ursinus College</a>, Fall 2019</h2>
+											<h2>Instructor: <a href = "http://www.ctralie.com">Christopher J. Tralie</a></h2>
+										</header>
+
+											<div class = "row">
+												<div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/Rover.png" width = 250 height = 200>
+													</center>
+                                                </div>
+                                                <div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/usain-bolt-running.png" width = 300 height = 200>
+													</center>
+												</div>
+												<div class="4u 12u$">
+													<center>
+													<img src = "OverviewPictures/sinc.svg" width = 250 height = 200>
+													</center>
+												</div>
+											</div>
+
+											<div class = "row">
+												<div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/479px-Stationary_vs_inflection_pts.svg.png" width = 250 height = 200>
+													</center>
+												</div>
+												<div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/Oscillator.png" width = 200 height = 200>
+													</center>
+                                                </div>
+                                                <div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/538px-Derivative_-_geometric_meaning.svg.png" width = 200 height = 200>
+													</center>
+												</div>
+												<div class="4u 12u">
+													<center>
+													<img src = "OverviewPictures/Ecoli.gif" width = 250 height = 200>
+													</center>
+												</div>
+											</div>
+
+
+<!-- Start of Last Updated -->
+<h2><b>Course Evolving: Site Last Updated 12/12/2019
+</b></h2><!-- End of Last Updated -->
+
+											<h2>Class Times / Locations</h2>
+											<h3>
+												<ul>
+													<li>Monday/Wednesday 11-11:50 Pfahler Hall, Room 001B</li>
+													<li>Tuesday/Thursday 11-11:50 Pfahler Hall, Room 012</li>
+												</ul> 
+											</h3>
+											<h2><a name = "officehours">Office Hours</a> (in Pfahler 101J)</h2>
+											<h3>
+												<ul>
+													<li>10:00-11:00 AM Monday</li>
+													<li>1:30PM-2:30PM, Tuesday/Thursday</li>
+													<li>2:50-4:00PM Wednesday</li>
+												</ul>
+											</h3>
+											<h2><a name = "virtual">Virtual Office Hours</a></h2>
+											<h3>
+												<ul>
+													<li>8:00PM - 9:00PM Monday/Wednesday on Microsoft Teams</li>
+												</ul>
+											</h3>
+
+											<h2><a href = "https://www.pearsonmylabandmastering.com/northamerica/mymathlab/">Click here</a> to go to MyMathLab (MML)</h2>
+
+											<h2>Overview</h2>
+
+											<p>
+												Calculus is a field that revolutionized mathematics, the sciences, an engineering by introducing a formal approach to studying "continuous change" or "instantaneous change" of functions.  For instance, if I wanted to know the average speed at which someone can run the 100 meter race, I would time them, and then I would divide 100 meters by that time.  A time of 10 seconds (which is incredibly respectable!) would imply that the runner ran at 10 meters/second on average.  However, what if I want to know how quickly they were running at <b>exactly</b> 50 meters into the race?  It most likely was not 10 meters/second, since they probably accelerated at the beginning and reached a higher speed towards the middle.  If I try to follow the averaging approach, though, I will end up dividing a distance of zero by a time of zero<SUP><a href = "#dividebyzero">[1]</a></SUP>, since it takes no time and no distance to stay at 50 meters.  Calculus gives us a clever way around this apparent dead end.  More abstractly, calculus will allow us both to look at "instantaneous rates of change" and to add up an "infinite amount of infinitesimal quantities" with ease.
+											</p>
+
+											<p>
+												In this course, students will learn calculus of functions of a single, real-valued variable.  In addition to reviewing <a href = "Schedule/index.html#functions">function concepts</a> from pre-calculus and college algebra, students will study three main concepts:
+												<ul>
+													<li>
+														<a href = "Schedule/index.html#limits">Limits</a>, or the process of evaluating a function <i>arbitrarily closely</i> to a particular input, without ever fully reaching that input.</li>
+													<li>
+														<a href = "Schedule/index.html#derivatives">Derivatives</a>, or an operator on functions which, given a function <b>f</b>, spits out a new function <b>df/dx</b> which describes the instantaneous rate of change of <b>f</b> at all inputs at which it can be computed.  Students will also study <a href = "Schedule/index.html#derivapplications">applications of the derivative</a>, including optimization (e.g. how to make the largest volume box with a limited amount of material) and numerical analysis (e.g. how to estimate derivatives from data when we can't compute them exactly).
+													</li>
+													<li>
+														<a href = "Schedule/index.html#integrals">Integrals</a>, or the "area under a curve," which give a systematic way of adding up infinitely many infinitesimal quantities, and which turn out to be intimately related to derivatives.  Time permitting, we will discuss applications of integration to audio processing.
+													</li>
+												</ul> 
+											</p>
+
+											<p>
+												<sup id = "alllevels"><a name = "dividebyzero">1.</a> On the first lecture, we will debate what zero divided by zero is, but generally dividing anything by zero in mathematics is invalid!
+													</sup>
+											</p>
+											
+											<hr>
+											<h2><a name = "goals">Learning Goals</a></h2>
+											<p>
+											<ul>
+												<li>Learn how to make small, consistent steps and progress that leads to deep understanding in a subject that builds on itself (see <a href = "https://ii.library.jhu.edu/tag/salami-method/">SALAMI Method</a>)</li>
+												<li>Learn how to think both geometrically and algebraically about concepts simultaneously, while also identifying which modality is easier for you.</li>
+												<li>Practice parsing and translating mathematical notation, and using proper notation when writing solutions to problems.</li>
+												<li>Identify appropriate tools to solve word problems, and identify what parts of word problems actually need to be modeled mathematically and which can be ignored.</li>
+												<li>Demonstrate proficiency with the idiosyncrasies of mathematical software, and demonstrate basic skills for "<a href = "https://www.math.ubc.ca/~israel/m210/topten.pdf">debugging</a>" this software when it goes wrong.</li>
+												<li>Experiment with mathematical concepts numerically and summarize findings in writeups which can be communicated to a general audience.</li>
+												<li>Learn how to ask for help and learning how to accept and to work through mathematical confusion.</li>
+											</ul>
+											</p>
+											
+											<hr>
+											<h2>Prerequisites</h2>
+											<p>
+											Placement based on the high school record and a placement test, or a grade of C- or better in MATH-110: Precalculus.  A thorough understanding of algebra 2 and precalculus are assumed.
+											</p>
+
+											<hr>
+											<h2><a name = "communication">Canvas / Microsoft Teams</a></h2>
+											<p>
+											We will be using Canvas, but only to submit labs and to store all of the grades.
+											</p>
+											
+											<p>
+											For all other discussions and announcements for the course, we will be using  <a href = "https://insights.ursinus.edu/display/LEI/Microsoft+Teams">Microsoft Teams</a>, which is linked to your Office suite through Ursinus, so you are automatically enrolled.  There you can ask and answer questions about the lecture content and assignments.  Since it is likely that students will have similar questions, it is much more efficient for me to answer them there so the whole class can see the answer, so it is possible that I will ask you to re-send a question on Microsoft Teams that I get in e-mail (please do not be shy or take it personally if I do so; it means it was a great question and worth sharing with everyone!)
+											</p>
+
+											<h3>Microsoft Teams Communication Policy</h3>
+											Since this is a class-wide communication, the following rules apply to Microsoft Teams
+											<ul>
+												<li>
+													Students are expected to be respectful and mindful of the <a href = "#environment">classroom environment and inclusivity standards</a>.  They are equally applicable to a virtual environment as they are in class.</li>
+
+												<li>
+													Students <b>are not</b> permitted to share direct answers or questions which might completely give away answers to any homework problems or labs publicly on Microsoft Teams.  When in doubt, please send me a direct message there.
+												</li>
+
+												<li>
+													I will attempt to answer questions real time during my <a href = "#virtual">virtual office hours</a>.  Otherwise, I will make every attempt to respond within 24 hours on weekdays, at any time before 9PM.  I cannot be expected to respond at all on Saturdays or Sundays, so please plan accordingly.  (Of course, students can and should still respond to each other outside of these intervals, when appropriate.  This could be an opportunity to earn <a href = "Raffle/index.html">raffle points</a>!).
+												</li>
+											</ul>
+											
+											<hr>
+											<h2><a name = "readings">Readings</a></h2>
+											<p>
+											The official textbook for this course is 
+											
+											<ul>
+											<li>Briggs, Cochran, Gillett, Schulz. <a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645"><i>Calculus: Early Transcendentals, 3rd Edition</i></a>.  ISBN-13: 978-0134763644 .</li>
+											</ul>
+											
+											The book is a great resource, and we will aim to cover up to section 5.3.  We will mostly follow the book in sequence, as you will see on <a href = "Schedule/index.html">the schedule</a>, though there will be a couple of minor deviations.<BR>
+											</p>
+
+											<p>
+												In addition to the material and practice problems in the book, each book also arrives with a code which you can use to <a href = "Student_Registration_Handout_tralie81944.pdf">enroll in Pearson's MyMathLab</a>, which we will be using for homework.
+											</p>
+
+											<p>
+											<a name="financial"></a>
+											<b>NOTE:</b> The cost of this book may be prohibitive for some students, but it is very important that you purchase the book so that you obtain a code to access the online homework.  In the past, students who cannot afford the book have simply not purchased the book, and then subsequently missed all of the homework.  Please communicate as early as possible if you are having trouble obtaining the book, rather than keeping this to yourself, so that we can work on a solution together.
+											</p>
+
+											<hr>
+											<h2>Other Resources</h2>
+											<p>
+												For extra practice, and to supplement my lectures in class, Khan academy is a great resource.  The calculus page is at the link <a href = "https://www.khanacademy.org/math/calculus-1">https://www.khanacademy.org/math/calculus-1</a>.  For the first section of the course, you may also want to look at polynomials, composite functions, and trigonometry in the precalc modules at <a href = "https://www.khanacademy.org/math/precalculus">https://www.khanacademy.org/math/precalculus</a>.
+											</p>
+
+
+
+											<hr>
+											<h2><a name = "homework">Homework</a></h2>
+
+											<h3><a href = "https://www.pearsonmylabandmastering.com/northamerica/mymathlab/">MyMathLab</a> </h3>
+											<p>
+											There will be 2-3 "bite-sized" homeworks assigned per week to keep everyone on track and practicing.  These will take place online through a system known as <a href = "https://www.pearsonmylabandmastering.com/northamerica/mymathlab/">MyMathLab</a> (please click on the preceding hyperlink to visit the login page).  Students will have <i>as many tries as they need</i> to get each problem correct, and the problem will simply be graded for correctness (i.e. students will not submit their work).
+											</p>
+
+
+											<h3><a href = "Labs/index.html">Maple Labs</a> </h3>
+											<p>
+											Students will work in groups of 2-3 to complete four labs throughout the semester using the <a href = "https://www.maplesoft.com/">Maple</a> mathematical programming language.  This is not as scary as it sounds; Maple is basically a souped up calculator that can do both symbolic/algebraic computations and numerical computations.  More information can be found on the <a href = "Labs/index.html">labs</a> page.
+											</p>
+											
+											<hr>
+											<h2><a name = "grading">Grading</a></h2>
+											<p>
+												Grades are my least favorite of the course, but we need some way to quantify progress in the class.  Overall, though, I would like discussions in my office hours to reflect content much more often than I would like them to reflect grading, and as part of this, I want to make sure that no single assessment can tank a student if they have a bad day.  Note that the <a href = "#homework">MyMathLab homeworks</a> have 5 retries for each question.  Furthermore, the final exam is only worth 15% of the final grade.  Finally, and most importantly, half of the grade is based on about a dozen small quizzes, and there is <a href = "#quiz">generous regrading policy</a>.  I hope this will alleviate anxiety about testing and grading, and enables student to simply enjoy learning.
+
+												<!--<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The integrity of a grade and ways to make the shift... <a href="https://twitter.com/hashtag/edchat?src=hash&amp;ref_src=twsrc%5Etfw">#edchat</a> <a href="https://twitter.com/hashtag/unionrxi?src=hash&amp;ref_src=twsrc%5Etfw">#unionrxi</a> <a href="https://twitter.com/hashtag/sblchat?src=hash&amp;ref_src=twsrc%5Etfw">#sblchat</a> <a href="http://t.co/2rCA8Xu9MI">pic.twitter.com/2rCA8Xu9MI</a></p>&mdash; Dr. Justin Tarte (@justintarte) <a href="https://twitter.com/justintarte/status/506183518095802368?ref_src=twsrc%5Etfw">August 31, 2014</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+											</p>
+
+
+											<h3>Breakdown</h3>
+											<table>
+											<tr><td>MyMathLab Homework</td><td>10%</td></tr>
+											<tr><td>Quizzes</td><td>50%</td></tr>
+											<tr><td>Labs</td><td>20%</td></tr>
+											<tr><td>Class Participation</td><td>5%</td></tr>
+											<tr><td>Final Exam</td><td>15%</td></tr>
+											</table>
+
+											<h3><a name = "quiz">Quizzes And Quiz Retry Policy</a></h3>
+
+											<p>
+												About 15 small quizzes taking about 25 minutes each will be given <a href = "Schedule/index.html">every Tuesday</a>, so students have the weekend to review and practice problems.  The focus of each quiz will be the previous week of topics, but to keep things cumulative, <i>there will also be one question on every quiz that is from any topic we covered to date from day one</i>.  There will be opportunities for students to improve their scores on the quizzes, as detailed in two ways below:
+											</p>
+
+                                            <ul>
+
+                                                <li>
+                                                    <a name = "reattempts">4 Quiz Re-Attempts:</a> 
+                                                    <p>Students will have the opportunity to re-attempt quizzes throughout the semester.  Quizzes will be re-administered during <a href = "#officehours">office hours</a>.  Students can re-attempt any quiz from any prior week during the semester any time, but they <b>are only allowed to re-attempt each quiz once, for a total of 4 re-attempts throughout the semester</b>.  Students must also <b>let me know by Sunday night at 11:59PM before a week starts which quiz they would like to re-attempt and when</b> so that I have time to print and prepare them.  Students <b>must not share any questions from the re-attempted quizzes</b>.  If they do, they will be subject to penalties in the <a href = "#cheating">cheating section</a>
+                                                    </p>
+                                                </li>
+
+                                                <li>
+                                                    <a name = "designyourown">Design Your Own Problem:</a>
+                                                    <p>
+                                                    For every single quiz, the student will be able to retry <i>exactly one question</i> from scratch (this will not count towards a re-attempt).  The student will design his/her own problem that's sufficiently similar (but not the same) as the problem that they want to retry.  The student will then solve this problem, and it will be graded in the place of the original problem.  The problems that the students create <b>should not</b> be problems which have answers in the back of the book.  I would prefer that students come up with their own from scratch.  The student should check with me before attempting the problem to make sure the problem is both correct and sufficiently similar to the problem on the quiz.  Then, the student can solve the problem and send me the solution to be graded over Microsoft Teams or in person.
+                                                    </p>
+                                                </li>
+
+                                            </ul>
+					
+											
+											<h3>Letter Grades</h3>
+											<p>
+												Letter grades will be assigned on the scale below at the end of the course.  "Grade grubbing" will not be tolerated.  On my end, every assignment has or will have very precise expectations and point breakdowns.  I will also return assignments in a timely manner, and the running weighted grades will be updated on Canvas.  Furthermore, I have gone through great pains to ensure that no single bad day will ruin your whole grade, including the <a href = "#quiz">quiz retry policy</a>.  Therefore, I expect a commensurate level of respect from you.  In sum, you should know where you stand at all times, there will be plenty of opportunities to improve your standing, and there should be no surprises at the end of the course. 
+												<table>
+													<tr>
+														<td>
+															<ul>
+																<li><b>A+</b>: 97-100</li>
+																<li><b>A</b>: 93-96.9</li>
+																<li><b>A-</b>: 89.5-92.9</li>
+															</ul>
+														</td>
+														<td>
+															<ul>
+																<li><b>B+</b>: 87-89.49</li>
+																<li><b>B</b>: 83-86.9</li>
+																<li><b>B-</b>: 79.5-82.9</li>
+															</ul>
+														</td>
+														<td>
+															<ul>
+																<li><b>C+</b>: 77-79.49</li>
+																<li><b>C</b>: 73-76.9</li>
+																<li><b>C-</b>: 69.5-72.9</li>
+															</ul>
+														</td>
+														<td>
+															<ul>
+																<li><b>D+</b>: 67-69.49</li>
+																<li><b>D</b>: 63-66.9</li>
+																<li><b>D-</b>: 59.5-62.9</li>
+															</ul>
+														</td>
+														<td>
+															<ul>
+																<li><b>F</b>: 59.49 and below</li>
+															</ul>
+														</td>
+													</tr>
+												</table>
+											</p>
+											
+											<HR>
+											<h2><a name = "participation">Classroom Participation</a></h2>
+
+											<p>
+												In lecture, my goal is to get everyone involved in their learning real time as much as possible.  If a few students are participating disproportionately, I reserve the right to use a  <a href = "../WheelOfFortune/WheelOfFortune.html">wheel of fortune app</a> to randomly call on people from the roster.
+											</p>
+											
+											<h3><a name = "raffle"></a>Raffle Points / Group Work</h3>
+
+											<p>
+											In addition to ordinary participation that follows the natural rhythm of a lecture, most days there will be at least one "raffle point problem," which is a question that follows on the heels of newly presented material.  Students will split into groups of 2-3 and try to work through the problems together.  When a group of students believe they have figured out the answer, they raise their hand.  The other students can continue to work while I verify that the answer is correct.  If the answer is correct, the students present the answer to the class.  At that point, each student in the group receives a <a href = "Raffle/index.html">raffle point</a> (please visit the <a href = "Raffle/index.html">raffle</a> tab under the menu for more information on raffle points).  If the group is not correct upon my checking, then the groups continue this process until one gets it correct, and then the competition is over.
+											</p>
+											
+											<p>
+											<b>I reserve the right to shuffle seats at the beginning of class so that different students work together</b>	
+											</p>									
+											
+											<h3>Overall Participation Score / Classroom Etiquette</h3>
+											For classroom attendance, the following rules apply
+											<ul>
+												<li>Points will be evenly divided among all classes.</li>
+												<li>Students with an unexcused absence from a class will lose all points for that class.</li>
+												<li>It is imperative that students show up on time, because important announcements may happen at the beginning of every class.  Therefore, any student who shows up after the lecture has started will lose half of the points for that class.</li>
+												<li>Please be attentive during class.  <b>The use of laptops and other electronic devices is not permitted unless you are instructed to use them or are using them to take notes</b>.  There will be class exercises that involve coding, but lecture time should be used for learning graphics and mathematics.  If I have to ask you more than once in a single lecture to cease use of your electronic device, it will count for a half absence for the day.  <b>Alternatively, please try to think of this as a <u>safe space</u> away from social media.</b>  We could all use a break, and we are fortunate to have a good excuse to make that space.</li>
+												<li>Please follow common courtesy.  For instance, you can bring food and drink as long as it's not distracting, but please clean up after yourself if you do.  Our janitorial staff deserves the utmost respect and help with their job.</li>
+											</ul>
+											</p>
+
+											<HR>
+											<h2><a name = "environment">Classroom Environment / Accommodations</a></h2>
+
+											<h3>Inclusive Environment</h3>
+											<p>
+												My goal is to foster a environment in which students across all axes of diversity feel welcome and valued, both by me and by their peers.  Axes of diversity include, but are not limited to, age, background, beliefs, race, ethnicity, gender/gender identity/gender expression (please feel free to tell me in person or over e-mail which pronouns I should use), national origin, religious affiliation, and sexual orientation.  Discrimination of any form will not be tolerated.
+											</p>
+
+											<p>
+												Furthermore, I want all students to feel comfortable expressing their opinions or confusion at any point in the course, as long as they do so respectfully.  As I will stress over and over, being confused is an important part of the process of learning mathematics.  Therefore, I will not tolerate any form of put-downs by one student towards another about their confusion or progress in the class.  Learning math and struggling to grow is <a href = "https://i0.wp.com/katielmartin.com/wp-content/uploads/2019/02/1_9HzbByi2Uzit8474Rp4ZPg-1.jpg?w=550&ssl=1">not always comfortable</a>, but I want it to feel safe.  Remember, "fail" stands for "First Attempt In Learning."
+											</p>
+
+											<h3>Accommodations</h3>
+
+											<p>
+											Ursinus College is committed to providing reasonable accommodations to students with disabilities.  Students with a disability should contact the Directory of Disability Services, <a href = "https://www.ursinus.edu/live/profiles/2064-shammah-bermudez">Shammah Bermudez</a>, ASAP.  Mr. Bermudez is located in the Center for Academic Support in the lower level of Myrin Library.  Please visit <a href = "https://www.ursinus.edu/offices/institute-for-student-success/students-with-disabilities/current-students-/">this link</a> for more information on the process.  I will do my best to accommodate your requests, and they will be kept completely confidential.
+											</p>
+											
+
+											<h2><a name = "cheating">Collaboration And Cheating Policy</a></h2>
+
+											<p>
+											Students are allowed to work individually or in groups of 2 to 3 on each of the labs, but each student must submit his/her own lab report, written in his/her own words.  Students may discuss homework problems as they are underway, but they must input their own solutions.
+											</p>
+
+											<p>
+											In the unfortunate and disappointing event that I do suspect cheating on the labs, the homework, or the in class quizzes, I will confront the individual or group on the first offense.  If there is enough evidence, a score of -100% will be given on that assessment.  For second and subsequent offenses, I will report the offense to <a href = "https://www.ursinus.edu/live/profiles/184-">Dean Sorensen</a>.
+											</p>
+
+
+
+								</section>
+								
+
+
+						</div>
+					</div>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">General</a></li>
+										<li><a href = "Schedule/index.html">Schedule</a></li>
+										<li><a href = "Labs/index.html">Maple/Sage Labs</a></li>
+										<li><a href = "Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements										
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>

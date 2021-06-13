@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1, Fall 2019</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+        <link rel="stylesheet" href="default.min.css">
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1, Fall 2019</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+                                        <h2>Lab 2: Limits And Derivatives: Part 1<BR>(<a href = "sage1.html">Click here</a> for the Sage version)<BR>(<a href = "maple2.html">Click here</a> for part 2)</h2>
+                                        
+                                        <h2>By <a href = "http://www.ctralie.com">Christopher J. Tralie</a></h2>
+                                    </header>
+
+                                <h2><a name = "part1">Problem 1: Root Finding Using The Intermediate Value Theorem (5 pts)</a></h2>
+                                    <p>
+                                    Consider the equation 
+
+                                    \[ sin(x) + \sqrt{x} = x \]
+
+                                    This equation would be difficult to solve using conventional algebraic means, so we will be instead using a numerical technique that relies on continuity.  To do this, let's hone in on the interval <b>[2, 3]</b> for <b>x</b>.  Since each individual component of this equation is continuous on this interval, each side of the equation is continuous, and the intermediate value theorem holds.
+                                    </p>
+
+                                    <h3>Step 1: Showing Existence of A Solution on [2, 3]</h3>
+                                    <p>
+                                    First, re-arrange the above equation into the form <b>f(x) = 0</b>.  Then, define a function in Maple that represents <b>f(x)</b>, evaluate <b>f(x)</b> at the endpoints of the interval, and use the intermediate value theorem to conclude that there must be a solution.  
+                                    </p>
+                                    <p>
+                                        <b>Question:</b>Explain in your writeup how you are applying the intermediate value theorem to conclude that there is a solution in the interval <b>[2, 3]</b>.<BR>
+                                        <b>Hint:</b> You may need to numerically evaluate <b>f(2)</b> and <b>f(3)</b> to help you with this.  Look back at the <a href = "../Lab1/maple.html#basicnumerical">previous lab</a> to refresh yourself on how to do this.
+                                    </p>
+
+                                    <h3>Step 2: Root Finding by Logarithmic Search</h3>
+                                    <p>
+                                        You will now hone in on the root of <b>f(x)</b> (a solution <b>f(x) = 0</b>), which is also a solution of the above equation, by successively halving the interval under consideration.  Start with a variable <b>a = 2</b> and a variable <b>b = 3</b>.  Then, perform the following steps several times
+
+                                        <ol>
+                                            <li>Define a variable <b>c</b> that's halfway in between <b>a</b> and <b>b</b></li>
+
+                                            <li>Replace either <b>a</b> or <b>b</b> with the value of <b>c</b>, so that the new <b>f(a)</b> and <b>f(b)</b> continue to have opposite signs.</li>
+
+                                            <li>Repeat steps 1 and 2 six more times and indicate in your writeup what your intervals are at each step.</li>
+                                        </ol>
+                                    </p>
+
+                                    <!--<p>
+                                    <b>Hint:</b> The <code>print()</code> command will print out results into your cells, and it can take multiple comma separated values.  For instance, <code>print(1, 2, 3)</code> will output <code>1 2 3 </code>.  This command should help you to keep your notebook organized.
+                                    </p>!-->
+
+                                    <p>
+                                        <b>Question: </b> What is the seventh <b>c</b> you get when you do this?  Plug in that <b>c</b> to \[ \sin(x) + \sqrt{x} = x \]
+                                        How close is it to satisfying that equation compared to the <b>x = 2</b> and <b>x = 3</b> that you started with?
+                                    </p>
+
+                                    <p>
+                                        <b>Extra Credit Question (+2) </b>: How long would it take to get within 0.01 of a true solution of the equation? (Hint: There's a reason this is called logarithmic search).  Are you within that tolerance?
+                                    </p>
+
+                        <h2><a name = "part2">Problem 2: Derivatives in Maple (5 pts)</a></h2>
+                                <p>
+                                    You will now familiarize yourself with the <code>diff</code> command in Maple, which is used to take derivatives of functions.  To take a derivative of an algebraic expression with respect to a variable in that expression, type <code>diff(expression(variable), variable)</code>.  For instance,
+                                </p>
+
+                                <p>
+                                    <code>f(x) := x^2/3 + 3*x</code><BR>
+                                    <code>diff(f(x), x)</code>
+                                </p>
+
+                                should give you <code>2*x + 3</code>.
+
+                                <p>
+                                    <b>Question: </b> What is the derivative of 
+                                    \[ e^{\sqrt{4x^2 + 2}} \]
+                                    with respect to <b>x</b>?  Do this problem by hand and attach your work, then use Maple to show that you got the correct answer.
+                                </p>
+                        
+
+
+                                <h2><a name = "part3">Problem 3: Gaussian Derivatives and Hermite Polynomials: An Application To Neuroscience (5 pts)</a></h2>
+                                <p>
+                                    Consider the function 
+        
+                                    \[ f(x) = \frac{1}{2}e^{-x^2/2} \]
+        
+                                    Compute the first two derivatives by hand and attach your work (taking a picture of writing on paper is fine).  Then check your answers using the derivative function in Maple.  Note that to take the <b>n<SUP>th</SUP></b> derivative of a function <b>f</b> with respect to <b>x</b> in Maple, the command is
+    <pre>
+    <code language="python">
+    fn = diff(f(x), x$n)
+    </code>
+    </pre>
+    </p>
+                                <p>
+                                    <b>Question: </b> Use Maple to compute and plot the 10th derivative, the 50th derivative, and the 100th derivative over the interval from -4 to 4.  What pattern do you notice happening as you compute more and more derivatives?
+                                </p>
+        
+                                <p>
+                                    For your general edification, you should know that the polynomials in front of the exponential term at each derivative are known as <a href = "https://en.wikipedia.org/wiki/Hermite_polynomials#Definition">Hermite polynomials</a>.  Also, the derivatives are related to <a href = "https://en.wikipedia.org/wiki/Morlet_wavelet">Morlet wavelets</a>, which is a model for how the <a href = "https://en.wikipedia.org/wiki/Visual_cortex">visual cortex</a> in our brains picks up on edges and stripe patterns.
+                                </p>
+
+
+
+
+                        </div>
+                    </div>
+                    
+                    <script src="highlight.min.js"></script>
+                    <script src="highlightjs-line-numbers.min.js"></script>
+                    <script>
+                        hljs.initHighlightingOnLoad();
+                        //hljs.initLineNumbersOnLoad();
+                    </script>
+
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+                var sc_project=7309088; 
+                var sc_invisible=1; 
+                var sc_security="f655b56d"; 
+                </script>
+                <script type="text/javascript"
+                src="http://www.statcounter.com/counter/counter.js"></script>
+                <noscript><div class="statcounter"><a title="free hit counter"
+                href="http://statcounter.com/" target="_blank"><img class="statcounter"
+                src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+                counter"></a></div></noscript>
+                <!-- End of StatCounter Code -->
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+	

@@ -1,0 +1,244 @@
+SECTION
+<a name = "functions">Functions</a>
+We start the course with a review about some topics from functions.  A <i>function</i> is an object which, given an input from some set of objects, returns an output from another set of objects.  For example, if I want to know how old someone will be in four years, then I input their (possibly decimal valued) age in years (from the set of years), and the function will output that age plus 4: <code>f(x) = x + 4</code> (also in the set of years).  In this course, we will focus on <i>real-valued functions</i>; that is, functions that taken in a single real value and which output a single real value (of which the above +4 ageing function is an example).  We will discuss how to represent real valued functions, how to make new functions from template functions, and some special families of real-valued functions (linear, polynomial, trigonometric, exponential/logarithmic).
+
+LECTURE
+Course Sneak Preview, Background Knowledge Assessment, Beginning Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.1<!--<BR><a href = "Lectures/Intro/FirstDayQuiz">Background knowledge assessment</a>!-->
+LECTURE
+Functions: Function Representations/Notation, Domain/Range, Symmetry
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.1
+LECTURE
+Finish symmetry, Function Composition / Transformations
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.1, 1.2</a></li><li><a href = "https://www.youtube.com/watch?v=Td1uPq9K--E">Function inside a function?</a></a></li></ul>
+LECTURE
+Practice Compositions / Transformations
+
+<a href = "https://www.geogebra.org/m/yxa2dw5x">Geogebra Transformations Interactive Tool</a>
+LECTURE
+<b>Week 1 Review</b>
+
+<ul><li><a href = "../Notes/Week1Review/Review.html">Review Problems</a></li><li><a href = "../Notes/Week1Review/Challenge.html">Challenge Problems</a></li></ul>
+LECTURE
+Inverse Functions, Exponential/Logarithmic Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.3 
+LECTURE
+Exponential/Logarithmic Functions
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.3</li><li><a href = "https://www.forbes.com/sites/alexknapp/2011/11/17/the-seduction-of-the-exponential-curve/#40be08324807">The seduction of the exponential curve</a> (2011 Forbes article)</li></ul>
+LECTURE
+Finish Logarithms, Trig Functions And Their Inverses
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.4</li><li><a href = "https://demoman.net/?a=trig-for-games">Trig for Games Interactive Tutorial</a></li></ul>
+SECTION
+<a name = "limits">Limits</a>
+In this section, we take our first foray into problems involving <font color="#f56a6a">dividing zero by zero</font>, which form the foundation of the rest of calculus.  In more concrete terms, we ask what happens to the output of a function when we can get as close as possible to a particular input for a function.  This works even if the function isn't defined at the input we're approaching!
+
+LECTURE
+<b>Week 2 Review</b><HR>More Trig
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1.4
+LECTURE
+Limits Overview
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.2 
+LECTURE
+Evaluating Limits, Limit Laws
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.3, 2.4
+LECTURE
+Limits Practice, Squeeze Theorem
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.3
+LECTURE
+<b>Week 3 Review</b><HR>Begin Infinite Limits
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.4
+LECTURE
+Vertical Asymptotes
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.4
+LECTURE
+Finish Vertical Asymptotes, Horizontal Asymptotes
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.4, 2.5
+LECTURE
+Slant Asymptotes, Begin Continuity
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.6
+LECTURE
+<b>Week 4 Review</b>
+
+<ul><li><a href = "../Math111_F2019_Review/Week4Review_Asymptotes.html">Week 4 Review Sage Notebook</li><li><a href = "../Math111_F2019_Review/Week4_ExtraProblems.html">Week 4 Extra Problems</li></ul>
+LECTURE
+Continuity
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.6
+LECTURE
+Intermediate Value Theorem
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.6
+SECTION
+<a name = "derivatives">Derivatives</a>
+Now we are able to introduce the first real workhorse of calculus: the derivative.  This allows us to estimate the "tangent slopes" of functions.  More concretely, it tells us how quickly functions are changing at different inputs.  We will spend a lot of time building up the nuts and bolts on toy functions in this section before we move onto the applications.
+
+LECTURE
+Delta/Epsilon Analysis, Intro To Derivatives And Differentiability
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 2.7, 2.1, 3.1</li><li><a href = "https://www.desmos.com/calculator/iejhw8zhqd">Desmos Delta/Epsilon Visualization Tool</li><li><a href = "https://www.futurity.org/usain-bolt-calculus-1233862-2/">Usain Bolt's Speed</a></li></ul>
+LECTURE
+<b>Week 5 Review</b>
+
+
+LECTURE
+Definition of Derivative And Examples
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.1, 3.2</li><li><a href = "https://webspace.ship.edu/msrenault/GeoGebraCalculus/derivative_at_a_point.html">Shippensberg Derivative Secant Demo</a></li><li><a href = "https://www.desmos.com/calculator/8ubngtz3ei">Desmos Derivative Secant Demo</a></li></ul>
+LECTURE
+Rules of Differentiation
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.3
+LECTURE
+Higher Derivatives, The Product Rule/Quotient Rule
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.3, 3.4</li><li><a href = "https://www.geogebra.org/m/pdNj3DgD">Geogebra position/velocity/acceleration demo</a></li><li><a href = "https://www.math.hmc.edu/calculus/tutorials/quotient_rule/proof.pdf">Quotient rule limit proof</a></li></ul>
+LECTURE
+<b>Week 6 Review</b>
+
+<ul><li><a href = "../Math111_F2019_Review/Quiz5ExtraReview.html">Extra Review Problems</a></li></ul>
+LECTURE
+Limit definition of <code>e</code>
+
+<ul><li><a href = "https://github.com/ctralie/Math111_F2019_Review/blob/master/ExponentialDerivatives.ipynb">Playing with Exponential Tangents in Sage</a></li></ul>
+LECTURE
+Chain Rule
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.7
+LECTURE
+Chain Rule Practice, Derivatives of Trig Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.5
+LECTURE
+Implicit Differentiation
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.8</li><li><a href = "../Math111_F2019_Review/ImplicitDifferentiationLoops.html">Implicit Differentiation of Loops Class Examples</a></li></ul>
+LECTURE
+Implicit Differentiation Continued, Derivatives of Inverse Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.8
+LECTURE
+<b>Weeks 7/8 Review</b>
+
+<ul><li><a href = "../Math111_F2019_Review/Quiz6ExtraReview.html">Extra Review Problems</a></li></ul>
+LECTURE
+Derivatives of Exponential Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.9
+LECTURE
+Derivatives of Log And Inverse Trig Functions
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.9
+SECTION
+<a name = "derivapplications">Applications of The Derivative</a>
+Now that we are through the nuts and bolts of derivatives, we move onto some applications of derivatives.  We will talk about how we can use derivatives to come up with accurate sketches of functions by understanding their "critical points" and "concavity."  We will also see how to use some of these features to understand <a href = "https://en.wikipedia.org/wiki/Mathematical_optimization">optimization problems</a> (e.g. what's the largest volume enclosure I can create from a fixed amount of material?).  We will end by finally being able to address the question of what <font color="#f56a6a">infinity divided by infinity</font> is.
+
+LECTURE
+Related Rates
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.11</li><li><a href = "http://webspace.ship.edu/msrenault/GeoGebraCalculus/derivative_app_rr_conical_tank.html">Conical tank filling app</a></li></ul>
+LECTURE
+Related Rates Practice
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 3.11</li><li><a href = "http://webspace.ship.edu/msrenault/GeoGebraCalculus/derivative_app_rr_falling_ladder.html">Falling Ladder App</a></li></ul>
+LECTURE
+Critical Points
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.1
+LECTURE
+Finish Related Rates Practice, Begin Critical Points
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.1
+LECTURE
+Critical Points Continued
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.1
+LECTURE
+Graphing Functions: Critical Points, Inflection Points, Concavity, Asymptotes Part 1 (<a href = "https://www.ursinus.edu/live/profiles/133-ann-marie-v-schilling">Guest Lecture by Professor Schilling</a>)
+
+<ul><li><a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.3, 4.4</li><li><a href = "https://www.geogebra.org/graphing/zc3zd48m">Driving through inflection points</a></li></ul>
+LECTURE
+Graphing Functions: Critical Points, Inflection Points, Concavity, Asymptotes Part 2 (<a href = "https://www.ursinus.edu/live/profiles/133-ann-marie-v-schilling">Guest Lecture by Professor Schilling</a>)
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.3, 4.4
+LECTURE
+Begin Optimization Problems (Guest Lecture by <a href = "https://www.ursinus.edu/live/profiles/2451-olena-kozhushkina">Professor Kozhushkina</a>)
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.5
+LECTURE
+Optimization Problems (Guest Lecture by <a href = "https://www.ursinus.edu/live/profiles/2451-olena-kozhushkina">Professor Kozhushkina</a>)
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.5
+LECTURE
+<b>Week 11 Review</b>
+
+
+LECTURE
+Optimization Continued
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.5
+LECTURE
+Optimization Continued
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.5
+LECTURE
+L'Hôpital's Rule
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.7
+SECTION
+<a name = "integrals">Introduction To Integration</a>
+We now look at the other major half of calculus, which is <i>integration</i>.  We introduce this concept as the ability to find the "area under a complicated curve" as the limit of a sum of very small simple areas we know how to compute, which is more precisely referred to as a <i>Riemann Sum</i>, or a <i>Definite Integral</i>.  In this way, we will be able to address what <font color="#f56a6a">0 times infinity</font> is.  Amazingly, we will see that integration turns out to be the "dual" of differentiation, in the sense that we can compute definite integrals by doing derivatives <i>in reverse</i>.
+
+LECTURE
+More Optimization Hints, Finish L'Hôpital's Rule
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.7
+LECTURE
+Definite Integrals
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 5.1, 5.2
+LECTURE
+Finish Definite Integrals
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 5.1, 5.2
+LECTURE
+Riemann Sums
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 5.2
+LECTURE
+Antiderivatives
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 4.9
+LECTURE
+Fundamental Theorem of Calculus
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 5.3
+LECTURE
+Fundamental Theorem of Calculus
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 5.3
+LECTURE
+Review
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1-5.3
+LECTURE
+Review
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1-5.3
+LECTURE
+Review/Raffle
+
+<a href = "https://www.amazon.com/Calculus-Transcendentals-William-L-Briggs/dp/0134763645">Briggs</a> 1-5.3

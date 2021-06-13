@@ -1,0 +1,13 @@
+Lab 1: Functions
+*Play with transformations, plot two graphs
+-Show that translating 2^x is the same as scaling 2^2
+
+Lab 2: Limits
+-Include a mystery number (e)
+
+Lab 3: Derivatives
+
+Lab 4: Optimization And Newton's Method
+
+Lab 5: Integration and Fourier Series
+

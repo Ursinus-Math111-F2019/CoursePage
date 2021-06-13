@@ -1,0 +1,531 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<!-- Header !-->
+	<head>
+		<title>Ursinus MATH 111: Calculus 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="../../assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../../assets/css/ie8.css" /><![endif]-->
+        <style>
+        .image_off, #home:hover .image_on{
+           display:none
+        }
+        .image_on, #home:hover .image_off{
+           display:block
+        }
+        </style>
+        <link href="prism.css" rel="stylesheet" />
+        <script src="prism.js"></script>
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../../index.html" class="logo"><strong>Ursinus MATH 111: Calculus 1</strong></a>
+								</header>
+<!-- End Header !-->
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+                                        <h2>Lab 1: Functions And Getting Started with Maple</h2>
+                                        <h3>By Chris Tralie (drawing heavily from work by <a href = "https://www.ursinus.edu/live/profiles/629-lisa-a-grossbauer">Lisa Grossbauer</a>, <a href = "https://www.ursinus.edu/live/profiles/650-christopher-sadowski">Chris Sadowski</a>, <a href = "https://www.ursinus.edu/live/profiles/133-ann-marie-v-schilling">Ann Marie Veca-Schilling</a>, and <a href = "https://www.ursinus.edu/live/profiles/2106-susan-adam">Susan Adam</a> in <a href = "#part1">Part 1</a>)</h3>
+                                    </header>
+
+                                    <h2>Table of Contents</h2>
+                                    <h3>
+                                    <ul>
+                                        <li><a href = "#gettingstarted">Getting Started</a></li>
+                                        <li><a href = "#part1">Part 1: The Basics of Maple Features And Syntax</a>
+                                            <h5>
+                                            <ul>
+                                                <li><a href = "#basicarithmetic">1. Basic Arithmetic And Keyboarding</a></li>
+
+                                                <li>
+                                                    <a href = "#basicnumerical">2. Entering Basic Numerical Expressions</a>
+                                                </li>
+                                                <li>
+                                                    <a href = "#specialsymbols">3. Numerical Expressions with Special Symbols</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href = "#algebraic">4. Algebraic Expressions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href = "#functions">5. Entering Functions</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href = "#menus">6. Using Maple's Context-Sensitive Menus</a>
+                                                </li>
+
+                                                <li><a href = "#changing">7. Changing Previously Entered Code in Maple</a></li>
+                                            </ul>
+                                            </h5>
+                                        </li>
+                                        <li><a href = "#part2">Part 2: Algebraic Calculations</a>
+                                            <h5>
+                                            <ul>
+                                                <li><a href = "#equationsmenu">1. Solving Equations Using Context Sensitive Menus</a></li>
+
+                                                <li><a href = "#equationscommands">2. Solving Equations Using Maple Commands</a></li>
+
+                                                <li><a href = "#evaluateexpressionsmenu">3. Evaluating Algebraic Expressions with Menus</a></li>
+
+                                                <li><a href = "#factoring">4. Factoring</a></li>
+
+                                                <li><a href = "#longdivision">5. Polynomial Long Division</a></li>
+
+                                                <li><a href = "#simplify">6. Simplify</a></li>
+
+                                                <li><a href = "#expand">7. Expand</a></li>
+                                            </ul>
+                                            </h5>
+                                        </li>
+                                    </ul>
+                                    </h3>
+
+                                    <h2><a name = "gettingstarted">Getting Started with Maple</a></h2>
+
+                                    <p>
+                                    As we have shown in class, Maple is a technical computing and documentation software package for mathematics, which you will use to explore some of the concepts we learn in calculus in pairs.  To install Maple on your local machine, you should follow <a href = "../Grossbauer2019_MapleInstall.pdf">these directions</a> (NOTE: You can also access the share drive from <a href = "https://ursinus.okta.com/">Grizzly Gateway</a>).  Please post on Microsoft Teams if you are having issues with the installation.  If all else fails, you should be able to access Maple via a virtual machine on <a href = "https://ursinus.okta.com/">Grizzly Gateway</a>.
+
+                                    </p>
+
+                                    <p>
+                                        Before we get started, it is important to familiarize yourself with the extensive help that is available through Maple.  The Maple Portal has video tutorials on many different aspects of utilizing the software. If you get stuck on something look for Maple help or visit the Maple Portal.  The labs will be designed to walk you step by step <b>but you may need to troubleshoot at times so use the resource!</b>  Quick ways to get help:
+
+                                        <ul>
+                                            <li>From the input prompt line type <code>?command</code>, which will return the help section for that command.  Try it for the <code>solve</code> command which is a very useful algebraic command, ?solve. Maple will return the help pages relating to the solve command.</li>
+
+                                            <li>
+                                                Click to activate the window put your cursor over a keyword (ex. <code>solve</code>) and Press F2. Try this method of getting help for the following maple instruction:
+                                                <h3>
+                                                    <code>
+                                                        <i>solve</i>({t<SUP>2</SUP>y<SUP>2</SUP> = 0, t - y = 1, t = 0})
+                                                    </code>
+                                                </h3>
+                                                You should see the same help pages pop up.
+                                            </li>
+
+                                            <li>If all else fails, have a look at <a href = "https://www.math.ubc.ca/~israel/m210/topten.pdf">top 10 mistakes in Maple</a> list to see if you're making one of them!</li>
+                                        </ul>
+                                    </p>
+
+                                    <h3>Lab Report Format</h3>
+
+                                    <p>
+                                        Rather than using Microsoft Word or some other text editor, you will actually be writing your lab reports inside of Maple itself.  Maple has both a <code>Text Mode</code> and a <code>Math Mode</code> that you can switch between when making your reports. You can click back and forth between modes by simply selecting <code>Text</code> (when documenting) and <code>Math</code> (when working math problems) on the tool bar.  This feature will allow you to embed mathematical equations and mathematical work directly in a text document, which would be an absolute pain in Microsoft Word.  Below is a screenshot of how you might format your report.  Circled in red is the toolbar where you can switch between math mode and text mode.
+                                    </p>
+
+                                    <img src = "ExampleModes.png">
+
+
+                                    <h3>Other Tips</h3>
+                                    <ul>
+                                        <li>
+                                            Maple has both a document and worksheet mode. From the <code>file</code> menu, select <code>new</code> and you will be given the option to select worksheet mode or document mode. The worksheet mode is the more traditional usage of Maple.  However, the document mode produces a bit more elegant documents. Use of the worksheet mode is easier for quick computational work (you can treat it like a souped up calculator at that point), but when you are producing your lab reports, document mode is preferable.  You will notice a difference in command prompts between the two modes.
+                                        </li>
+                                        <li>
+                                            Save your Maple Worksheet periodically just as you would while working with any document.  Click the file tab and select Save A...so that you can specify the directory that you want to save your work. The files created by Maple will have a <code>.mw </code> extension.  If you want to return to a particular <code>.mw </code> file just double click and Maple will open and populate the worksheet with your work.
+                                        </li>
+
+                                        <li>
+                                           Please be sure to spell check your document.  Much of the functionality that you have with Microsoft Word is available in Maple, so explore Maple's documenting capabilities. Before printing your documents, access the print preview by pulling down from the file tab and selecting print preview.  Your document should be readable before printing it! Add page breaks to enhance the readability. There is more information on lab reports at the end of this introduction manual.
+                                        </li>
+                                    </ul>
+
+
+
+                                    <h3>What To Hand In / General Guidelines</h3>
+
+                                    <ul>
+                                    <li>
+                                        When you are finished all of the steps in the lab and you have written up answers to the associated questions, you should turn in your <code>.mw</code> Maple worksheet that you saved.  Each group will submit exactly one <code>.mw</code> file via Canvas. The title of your electronic version should include both lab partner names & Lab # for ex., “Taylor  Swift and Ella O’Connor Lab #1”.  
+                                    </li>
+                                    
+
+                                    <li>
+                                    You should Answer all questions with complete sentences in Maple. Clearly identify each question.  You will use the text and math modes as described in this manual to create a readable document with grammatically correct language.  It is essential to communicate effectively using the appropriate mathematical language.
+                                    </li>
+
+                                    <li>
+                                    Label all graphs, axes, and explain your plots!
+                                    </li>
+                                    
+                                    <li>
+                                    Add any additional observations and comments that you may have. 
+                                    </li>
+
+                                    <li>
+                                    Please make sure that your report is readable to a person not literate in Mathematics.  Remember, someday you will be working in industry or academia and will need to effectively communicate your findings to your peers.
+                                    </li>
+
+                                    </ul>
+
+
+                            <h2><a name = "part1">Part 1: The Basics of Maple Features And Syntax</a></h2>
+
+                            <p>
+                                The purpose of the first part of the assignment is simply to get you familiar with the basics of Maple, so just follow the directions and execute the commands.  The <code>.mw</code> file should show that you have successfully run all of the commands.  
+                            </p>
+                            
+                            <h3><a name = "basicarithmetic">1. Basic Arithmetic And Keyboarding</a></h3>
+                            When you launch Maple, you start with a blank document with menus and toolbars at the top and palettes on the side.  Explore each of the palettes by expanding them.  At the cursor, you can start typing a math statement.  Press <code>Enter</code> to see the result.  <b>Be sure you are in Math mode</b>.  For example, you should do the following for this lab:
+                            <ul>
+                                <li>Type in <code>3+2 <b>Enter</b></code></li>
+                                <li>The result is returned on the next line with a label <code>(1)</code> that increments with each command.  You can access the results to use in other computations by typing <code>Ctrl L</code> and entering the number of the equation label.</li>
+                                <li>For lab reporting purposes, it is better to have the answer returned on the same line. Type in <code>3 + 2 Ctrl =</code>.</li>
+                            </ul>
+                            
+
+                            <h3><a name = "basicnumerical">2. Entering Basic Numerical Expressions</a></h3>
+
+                            <ul>
+                                <li>
+                                    <u>Fractions:</u>
+                                    <p>Maple calculates exact answers, so fractions remain as fractions throughout all calculations to reduce approximation errors in multi-step problems.  On a new line, enter 
+                                    </p>
+
+                                    <p>
+                                        <code>1/2 + 1/3</code>
+                                    </p>
+
+                                    <p>
+                                    Notice how typing a <code>'/'</code> automatically moves you to the denominator.  The right arrow will take you out so you will need to type
+                                    
+                                    \[ 1/2 \rightarrow + 1/3 \]
+
+                                    Press <code>Enter</code> for the result of <code>5/6</code>.</li>
+                                </p>
+
+                                <li>
+                                    <u>Approximate Numerical Representations:</u>
+                                    <p>
+                                    Right click on the 5/6 and select <b>Approximate</b> from the context menu.  Select accuracy of 5 digits.  The following should display:<BR>
+                                        <img src = "Maple_Approximate.png">
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>Numeric Formatting Options:</u>
+                                    <p>
+                                    If your problem already uses decimals, then Maple keeps to the same format.  However, you can apply different formatting to numeric results by right-clicking on 5/6 and selecting <code>Numeric Formatting</code>.  Then, a dialog box appears, and under <code>Category</code>, you can select <code>Scientific</code>, then press <code>Apply Formatting</code>:<BR><BR>
+                                        <img src = "NumericFormatting_Maple.png"><BR>
+
+                                    The following answer will then appear in your maple Worksheet:<BR>
+                                        <img src = "ScientificNotation_Maple.png">
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>Exponent Mode and Square roots:</u>
+
+                                    <p> In Maple, there are two ways to take square roots. The first is to raise an expression to the <code>1/2</code> power by going into <i>exponent mode</i> with the <code>^</code> symbol.  As with fraction mode, you can exit exponent mode by pressing the right arrow.  For example, type <code>25 ^ 1 / 2</code>, followed by the right arrow and <code>Enter</code>.  You should have an output of <code>5</code>.  Alternatively, for square roots in particular, you can use the <code>sqrt()</code> command. For example, type in <code>sqrt(25)</code> and press Enter. You should get an output of <code>5</code> here as well. 
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>
+                                        Multiplication:
+                                    </u>
+
+                                    <p>
+                                    Multiplication in Maple is done using the <code>*</code> symbol. For example, type in <code>3*2</code> and press <code>Enter</code>. You should receive and output of <code>6</code>. <b>You should always use <code>*</code> to multiply things together</b>, including functions, numbers, constants, and general expressions, to avoid confusion.  <b>It is a very common error to omit this symbol</b>. There are exceptions to this rule, but they lead to confusion for beginners.  
+                                    </p>
+                                </li>
+                            </ul>
+
+
+                        <h3><a name = "specialsymbols">3. Numerical Expressions with Special Symbols</a></h3>
+
+                        <p>
+                          In addition to fractions, special symbols such as <code>e</code> and <code>pi</code> remain as such throughout all calculations.  You can access <code>Pi</code> from the <code>Common Symbols Palette</code> and <code>e</code> from the <code>Expressions Palette</code>.  An alternative way to access these symbols/commands are through Maple's command completion, where you type the first few characters of the symbol and press <code>Esc</code>. Maple returns a list of possible symbols/commands and you select the one that you want from the list.
+                        </p>
+
+                        <ul>
+                            <li><u>The constant "Pi"</u>
+                            <p>
+                                Type in <code>5/6 + Pi</code> and press <code>Enter</code>.   You should have an output of 
+
+                                \[ \frac{5}{6} + \pi \]
+
+                                <i>It is important to use a capital letter P here</i>, since Maple will not understand "pi." Typing in <code>evalf(%)</code> and pressing <code>Enter</code> will give you a decimal approximation of 5/6 + π.
+                            </p>
+                            </li>
+
+                            <li><u>The constant "e"</u>
+
+                            <p>
+                                <b>In sum, DO NOT USE THE KEYBOARD “e” !!</b><BR>
+                                Old versions of Maple used <code>E</code> for the constant we call "e." This is no longer the case. If you need this constant, type in <code>e := exp(1)</code>, and press <code>Enter</code>. Maple will now understand that the letter <code>e</code> represents the constant "e." What we have done is the following. The command <code>“:=”</code> tells Maple to assign a certain value to the expression on the left-hand side. In this case, we are giving the symbol “e” a value. Namely, we are giving it the value <code>exp(1)</code>, the exponential of 1, or, as we normally write, <code>e</code>. Type in <code>evalf(e)</code>, and press <code>Enter</code> to get a decimal approximation of the constant “e”.  <i>Take note of this decimal value; it may come in handy later in this lab</i>
+                            
+                            </p>
+
+                            </li>
+                            </ul>
+
+                            <h3><a name = "algebraic">4. Algebraic Expressions</a></h3>
+
+                            <ul>
+                                <li><u>Expressions with variables:</u></li>
+                            <p>
+                                In Maple, you may enter all sorts of expressions with variables having any name you choose. For example, type in <code>f:= (x+2*y)^3</code>; and press <code>Enter</code>. You have now entered the expression \[(x+2y)^3\] and saved it in a variable named <code>f</code>. Type in <code>f</code> and press <code>Enter</code>. Notice that Maple does not automatically expand these expressions for you! Type in <code>expand(f)</code> and press <code>Enter</code>. Maple will now output the expression you gave it, but expanded. Note that this expanded expression is not saved to the variable <code>f</code>. Maple will still think <code>f</code> is the non-expanded expression you gave it. You can save the expanded expression to a variable called <code>g</code> by typing <code>g := expand(f)</code> and pressing <code>Enter</code>. We may also factor expressions using the <code>factor</code> command. Type in <code>factor(g)</code> and press <code>Enter</code> to factor <code>g</code>.<BR>
+                                    <b>NOTE: It is a common mistake to type <code>=</code> instead of <code>:=</code> when defining expressions with variables</b>
+                            </p>
+
+                            <li><u>Evaluating Expressions At Points:</u></li>
+                            <p>
+                                Oftentimes, we want to substitute numbers into our variables. Notice that since <code>f</code> is an expression, we can't simply write something like <code>f(1,2)</code> to substitute values into it. To substitute numbers into an expression, we use the <code>"subs()"</code> command. Type in <code>subs(x=1,y=2,f)</code> and press <code>Enter</code>. You have just told Maple to substitute 1 for <code>x</code> and 2 for <code>y</code> in the expression <code>f</code>. You should have an output of 125. In this case, the command only sets the x=1 and y=2 in the context of this expression, but if we had instead typed in <code>x:=1</code> and pressed <code>Enter</code>, it would have set <code>x</code> to be 1 <i>for the remainder of the worksheet</i>.  This is probably not a good idea, since we often want to use <code>x</code> as a variable in our expressions!
+                            </p>
+
+                            <li><u>Graphing Expressions:</u></li>
+                            Type in <code>plot(x^2-4)</code> and press <code>Enter</code>. Maple will display a graph of \[x^2-4\] and will pick a domain for you. We can change the domain if we wish to view a different part of the graph. Type in <code>plot(x^2-4, x=0..15)</code> and press <code>Enter</code>. This will show you the graph from x=0 to x=15.
+                            </ul>
+
+                            <h3><a name = "functions">5. Entering Functions</a></h3>
+
+                            <ul>
+                                <li><u>Functions:</u></li>
+                                <p>
+                                One may also input functions into Maple. Recall that a function is a rule that takes a number as input and returns a number as output. Type in <BR>
+                                    <code>h:=x -> x^2+5</code>
+                                and press <code>Enter</code>. We have just defined a function, called <code>h</code>, which takes a number (or expression!) as input, squares it, adds 5 to it, and then returns that value. For example, typing in <code>h(3)</code> and pressing <code>Enter</code> will return 14. Typing in <code>h(Pi)</code> and pressing <code>Enter</code> will return \[ \pi^2 + 5 \] Typing <code>h(f)</code> and pressing <code>Enter</code> will square the expression <code>f</code> we defined earlier and then add 5 to it! We can get the expression \[ x^2 + 5\] by simply typing <code>h(x)</code> and pressing <code>Enter</code>.
+                                </p>
+
+                                <li><u>Trigonometric functions and natural logarithm</u></li>
+                                <p>
+                                    Maple will, by default, understand trigonometric functions and will expect their input <b>to be in radians</b>. For example, typing in <code>cos(Pi)</code> and pressing <code>Enter</code> will return an output of -1. Maple will also understand the natural logarithm function. For example, typing in <code>ln(1)</code> and pressing Enter will return 0.
+                                </p>
+
+                                <li><u>Graphing Functions:</u></li>
+
+                                <p>
+                                    We may graph functions in Maple by converting them into expressions. Type in <code>h:= x -> x^2 – 3</code> and press <code>Enter</code>. Now, to graph <code>h(x)</code> from x=0 to x=15, type <code>plot(h(x),x=0..15)</code> and press <code>Enter</code>. This will give the desired graph.<BR>
+                                    <b>NOTE: It is a common mistake to forget to plug in <code>x</code> when going to plot  a function</b>
+                                </p>
+
+                            </ul>
+
+                            <h3><a name = "menus">6. Using Maple's Context-Sensitive Menus</a></h3>
+
+                            <ul>
+                                <li>
+                                    Type in the expression \[ x^2-4 \] then hover over this expression, and right click. The context-sensitive menu offers several operations that you can perform on the current expression: factor, simplify, solve, differentiate, integrate and plots to name a few that you will use this semester. Maple is smart enough to only offer operations that applies to this expression.
+                                </li>
+
+                                <li>
+                                    To plot the current expression select <code>Plots>2-D Plot</code> from the context-sensitive menu.
+                                </li>
+
+                                <li>
+                                    Modify the plot after it has been created by clicking on the plot.  At this point, a blue box appears around the plot.  You can expand it or shrink it by dragging the corners.  Right click on the plot itself and use the context-sensitive menus to modify the line type, to modify color of the graph, to label the axes, to add a title to the graph, and to add a legend, among many other options.  Play around with these options, as you will need to label all graphs and "make them pretty" to submit for your labs.  Notice the context-sensitive menu appears only with graphing options.<BR><BR>
+                                        <img src = "MaplePlot.png">
+                                </li>
+
+                            </ul>
+
+                            <h3><a name = "changing">7. Changing Previously Entered Code in Maple</a></h3>
+
+                            <ul>
+                                <li>Mathematics in a Maple document are live, so you can go back to make changes and re-execute the problem to obtain a new result.</li>
+
+                                <li>
+                                    Go back to the very first line where you entered <code>3 + 2</code> and change the 2 to a 8.  Then press <code>Enter</code> to obtain a new result of 11 (your final submission for this lab should reflect these changes.  No need to keep both the changes and the original).
+                                </li>
+
+                                <li>
+                                    Go back to <code>x<SUP>2</SUP> - 4</code>, change the <code>x<SUP>2</SUP></code> to <code>10*x<SUP>2</SUP></code>. Highlight the entire line, including the plot, and then click the <code>Execute</code> button found at the top of the Maple worksheet.  All selected calculations are updated. Notice the updated graph (your final .mw submission should reflect these changes. No need to keep both the changes and the original)<BR>
+                                        <img src = "MaplePlotUpdated.png">
+                                </li>
+                            </ul>
+
+                            <h2><a name = "part2">Part 2: Algebraic Calculations</a></h2>
+
+                            <p>
+                                The second part is a continuation of the first part, with a focus on some additional algebraic tools that exist in Maple.  As before, the <code>.mw</code> file should show that you have successfully run all of the commands.  
+                            </p>
+                            
+                            <h3><a name = "equationsmenu">1. Solving Equations Using Context Sensitive Menus</a></h3>
+                            <ul>
+                                <li><u>Solving for a variable:</u>
+                                <p>
+                                    To represent an equation in Maple, use the <code>=</code> sign for equality.  Type <code>a*x^2 + b*x + c = 0</code>.  <b>Remember you need to explicitly define the multiplication or Maple will see "ax" as a variable instead of "a" times "x".</b>
+                                </p>
+                                <p>
+                                    Right click on the equation to get the context menu. <code>Select Solve>Solve for Variable>x</code>.  The quadratic equation will be returned.
+                                </p>
+                                </li>
+
+                                <li>
+                                    <u>Solving for exact solutions:</u>
+                                    <p>
+                                        By default, Maple will find the exact solution for an equation.  Type in<BR>
+                                            <code>2*x^2 + x*x - 3 = 0</code><BR>
+                                        Right click on the equation to get the context menu, and select <code>Solve>Solve</code>.  The following result appears<BR>
+                                            <img src = "MapleQuadraticSolution.png">
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <u>Solving for numeric solutions:</u>
+                                    <p>
+                                    Type <BR><code>2*x^2 + 6*x - 3 = 0</code>.<BR>  Then right click on the equation to get the context menu.  <BR>Select <code>Solve>Numerically Solve</code><BR>
+                                        The following result appears<BR>
+                                            <img src = "MapleQuadraticNumerical.png">
+
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "equationscommands">2. Solving Equations Using Maple Commands</a></h3>
+                                    <ul>
+                                        <li><u>Solving one equation in one variable:</u>
+                                            <p>
+                                            Type in <code>solve(x^2-2=0,x)</code> and press <code>Enter</code>. The output will be the two solutions to the equation \[ x^2-2=0 \] The <code>solve()</code> command takes two inputs here: the equation we wish to solve, and the variable we wish to solve for. Notice, as usual, Maple does NOT give us a decimal answer. To instead obtain a decimal approximation, type <code>evalf(solve(x^2-2=0,x)</code>.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <u>Solving systems of equations:</u>
+                                            <p>
+                                                Type<BR>
+                                                    <code>solve({x^2*y^2=0, x-y=1, x!=0})</code>
+                                                and press <code>Enter</code>. You should obtain <BR>
+                                                <code>{x=1,y=0}</code><BR> as output, which is the solution of this system.  By using curly braces { and }, we have given Maple a list of equations. We have told Maple that the equations we wish to simultaneously solve are \[ x^2y^2 = 0 \] \[ x-y = 1 \] and \[ x \neq 0 \]. Here, the symbol != means “not equal to” (this is fairly standard in programming in general).
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "evaluateexpressionsmenu">3. Evaluating Algebraic Expressions with Menus</a></h3>
+                                    <p>
+                                        An expression in x written as <code>h:=sin(x)</code> is not a function.  Maple interprets this as <b>assignment</b> of an expression to the name <code>h</code>.  To find the value of an expression at a given value of x, you evaluate the expression at the point.  Type <BR>
+                                            <code>h := 2*x^2 + 6*x - 3</code><BR>
+                                        To evaluate at x=1: right click on the expression to bring up the context menu.  Select <code>Evaluate at a Point</code>. The following dialog box appears:<BR>
+                                            <img src = "MapleEvaluateAtAPoint.png"><BR>
+                                        The result returned is 5.  You could also evaluate this expression with a direct call to the Maple command <code>eval(h, x=1)</code> or by selecting the <code>evaluate</code> symbol from the <code>Expression palette</code>.  Use the <code>tab</code> button with the expression palette to fill in the necessary information:<BR>
+                                            <img src = "MapleEvalPalette.png">
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "factoring">4. Factoring</a></h3>
+                                    <p>
+                                        We will use the simple version of the Maple <code>factor</code> command. The factor function computes the factorization of a polynomial by the calling sequence <code>factor(a)</code>, where <code>a</code> is a polynomial.  Type<BR>
+                                            <code>factor(x^3 + y^3)</code><BR>
+                                        Press enter, and the traditional formula will be returned. Now factor the equation
+                                        \[ 6x^2 + 18x - 24 \]
+                                        You should obtain the result 
+                                        \[ 6(x+4)(x-1) \]
+                                        Alternatively, you could enter an expression, right-click on it, and use the context menu to select <code>Factor</code>.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "longdivison">5. Polynomial Long Division</a></h3>
+                                    <p>
+
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "simplify">6. Simplify</a></h3>
+                                    <p>
+                                        Maple's simplify command uses the basic algebraic rules to simplify expressions.  Type<BR><BR>
+                                            <code>simplify(sin(x)^2 + ln(2*x) + cos(x)^2</code><BR><BR>
+                                        The result that should appear is \[ 1 + \ln(2) + \ln(x) \]Alternatively, you could enter an expression, right-click on it and use the context menu select <code>Simplify>Simplify</code>.
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h3><a name = "expand">7. Expand</a></h3>
+                                    <p>
+                                        The <code>expand</code> command distributes products over sums.  This is done for all polynomials.  Type <code>expand((x+1)*(x+2))</code>.  The result that should appear is \[ x^2 + 3x + 2 \] Now type <code>expand(sin(x+y))</code>.  The result that should appear is \[ \sin(x) \cos(y) + \cos(x) \sin(y) \] What an easy way to get those trig identities out!
+                                    </p>
+                                </li>
+                                
+                            </ul>
+
+						</div>
+					</div>
+
+
+					<!--LaTeX in Javascript!-->
+					<script src="../../../../jsMath/easy/load.js"></script>
+
+<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../../index.html">General</a></li>
+										<li><a href = "../../Schedule/index.html">Schedule</a></li>
+										<li><a href = "../../Labs/index.html">Maple Labs</a></li>
+										<li><a href = "../../Raffle/index.html">Raffle</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<div class="mini-posts">
+										Announcements										
+                                    </div>
+								</section>
+
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; <a href = "http://www.ctralie.com">Christopher J. Tralie</a>. All rights reserved.  Contact chris.tralie@gmail.com. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+			
+            <!-- Start of StatCounter Code -->
+            <script type="text/javascript">
+            var sc_project=7309088; 
+            var sc_invisible=1; 
+            var sc_security="f655b56d"; 
+            </script>
+            <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script>
+            <noscript><div class="statcounter"><a title="free hit counter"
+            href="http://statcounter.com/" target="_blank"><img class="statcounter"
+            src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+            counter"></a></div></noscript>
+            <!-- End of StatCounter Code -->
+<!-- End Sidebar !-->
+
+<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../assets/js/main.js"></script>
+<!-- End Scripts -->
+	</body>
+</html>
